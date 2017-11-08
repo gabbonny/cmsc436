@@ -6,6 +6,9 @@ import java.util.ArrayList;
  * Created by Stefani Moore on 11/7/2017.
  */
 
+/**
+ * This class represents a fragment of a sentence that does not need any input.
+ */
 public class CompleteSentenceFragment implements Fragment {
     private String fragment;
 

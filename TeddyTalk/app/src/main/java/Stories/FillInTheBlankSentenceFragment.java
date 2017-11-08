@@ -6,29 +6,31 @@ import java.util.ArrayList;
  * Created by Stefani Moore on 11/7/2017.
  */
 
-public class FillInSentenceFragment implements Fragment {
+public class FillInTheBlankSentenceFragment implements Fragment {
+
     private String fragment;
     private String input;
-    private ArrayList<String> fillInOptions;
 
-    public FillInSentenceFragment(String fragment, ArrayList<String> fillInOptions){
+    public FillInTheBlankSentenceFragment(String fragment){
         this.fragment = fragment;
-        this.fillInOptions = fillInOptions;
     }
 
     public ArrayList<String> getFillInOptions(){
-        return new ArrayList<>(fillInOptions);
+        return null;
     }
 
     public void addFillInOption(String option){
-        fillInOptions.add(option);
+        return;
     }
 
-    public void setFillInOptions(ArrayList<String> fillInOptions){
-        this.fillInOptions = new ArrayList<>(fillInOptions);
+    public void setFillInOptions(ArrayList<String> fillInOptions){ return;
     }
 
     public void setInput(String input){
+        if(input == null){
+            throw new IllegalArgumentException("input can not be invalid");
+        }
+
         this.input = input;
     }
 
@@ -38,5 +40,6 @@ public class FillInSentenceFragment implements Fragment {
 
     public String toString() {
         return  fragment + (input == null ? "" : " " + input);
-     }
+    }
+
 }
