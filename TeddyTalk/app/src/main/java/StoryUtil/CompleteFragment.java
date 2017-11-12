@@ -1,4 +1,4 @@
-package Stories;
+package StoryUtil;
 
 import java.util.ArrayList;
 
@@ -9,10 +9,10 @@ import java.util.ArrayList;
 /**
  * This class represents a fragment of a sentence that does not need any input.
  */
-public class CompleteSentenceFragment implements Fragment {
+public class CompleteFragment implements Fragment {
     private String fragment;
 
-    public CompleteSentenceFragment(String fragment){
+    public CompleteFragment(String fragment){
         if(fragment == null) {
             throw new IllegalArgumentException("Fragment can't be null");
         }
@@ -24,18 +24,8 @@ public class CompleteSentenceFragment implements Fragment {
     }
 
     @Override
-    public ArrayList<String> getFillInOptions() {
+    public String[] getFillInOptions() {
         return null;
-    }
-
-    @Override
-    public void addFillInOption(String option) {
-        return;
-    }
-
-    @Override
-    public void setFillInOptions(ArrayList<String> fillInOptions) {
-        return;
     }
 
     @Override

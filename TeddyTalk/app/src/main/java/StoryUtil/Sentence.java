@@ -1,7 +1,6 @@
-package Stories;
+package StoryUtil;
 
 import android.app.Fragment;
-import android.app.PendingIntent;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,13 +10,15 @@ import java.util.NoSuchElementException;
  * Created by Stefani Moore on 11/7/2017.
  */
 
-public class Sentence implements Iterable<Stories.Fragment>{
-    private ArrayList<Stories.Fragment> fragments;
+public class Sentence implements Iterable<StoryUtil.Fragment>{
+    private ArrayList<StoryUtil.Fragment> fragments;
 
     public Sentence(){
-        fragments = new ArrayList<Stories.Fragment>();
+
+        fragments = new ArrayList<StoryUtil.Fragment>();
     }
-    public void addFragment(Stories.Fragment fragment){
+
+    public void addFragment(StoryUtil.Fragment fragment){
         if(fragment != null){
             fragments.add(fragment);
         } else {
@@ -25,7 +26,7 @@ public class Sentence implements Iterable<Stories.Fragment>{
         }
     }
 
-    public Stories.Fragment getFragment(int fragmentNum){
+    public StoryUtil.Fragment getFragment(int fragmentNum){
 
         if(fragmentNum < 0 || fragmentNum > fragments.size()){
             throw new NoSuchElementException("Invalid fragmentNum");
@@ -34,9 +35,10 @@ public class Sentence implements Iterable<Stories.Fragment>{
         return fragments.get(fragmentNum);
     }
 
-    public ArrayList<Stories.Fragment> getFragments() {
-        return new ArrayList<Stories.Fragment>(fragments);
+    public ArrayList<StoryUtil.Fragment> getFragments() {
+        return new ArrayList<StoryUtil.Fragment>(fragments);
     }
+
     public void removeFragment(Fragment fragment){
         if (fragment != null) {
             fragments.remove(fragment);
@@ -47,15 +49,15 @@ public class Sentence implements Iterable<Stories.Fragment>{
     public String toString(){
         StringBuffer res = new StringBuffer();
 
-        for(Stories.Fragment fragment : fragments){
+        for(StoryUtil.Fragment fragment : fragments){
             res.append(fragment).append(" ");
         }
 
         return res.toString();
     }
 
-    public Iterator<Stories.Fragment> iterator(){
-        Iterator<Stories.Fragment> iter = new Iterator<Stories.Fragment>() {
+    public Iterator<StoryUtil.Fragment> iterator(){
+        Iterator<StoryUtil.Fragment> iter = new Iterator<StoryUtil.Fragment>() {
 
             private int next;
 
@@ -65,7 +67,7 @@ public class Sentence implements Iterable<Stories.Fragment>{
             }
 
             @Override
-            public Stories.Fragment next() {
+            public StoryUtil.Fragment next() {
                 if(hasNext()){
                     return fragments.get(next++);
                 } else {

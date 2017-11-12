@@ -1,4 +1,4 @@
-package Stories;
+package StoryUtil;
 
 import java.util.ArrayList;
 
@@ -12,11 +12,7 @@ import java.util.ArrayList;
  */
 public interface Fragment {
 
-    public ArrayList<String> getFillInOptions();
-
-    public void addFillInOption(String option);
-
-    public void setFillInOptions(ArrayList<String> fillInOptions);
+    public String[] getFillInOptions();
 
     public void setInput(String input);
 
