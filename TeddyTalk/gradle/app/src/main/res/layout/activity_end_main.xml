@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fee8c8"
+    tools:context="com.example.gabby.teddytalksend.End_main">
+
+    <TextView
+        android:id="@+id/end_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/popup_bear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:fontFamily="cursive"
+        android:text="@string/ending"
+        android:textColor="#ffc82c"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="768dp"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/curtain"
+        android:id="@+id/curtain"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/replay"
+        android:src="@drawable/replay_icon"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/curtain"
+        android:layout_toStartOf="@+id/save"
+        tools:ignore="OnClick" />
+
+    <ImageView
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:id="@+id/save"
+        android:src="@drawable/save_icon"
+        android:layout_marginLeft="30dp"
+        android:layout_alignBottom="@+id/replay"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:id="@+id/rewrite"
+        android:src="@drawable/pencil_icon"
+        android:layout_alignTop="@+id/replay"
+        android:layout_toEndOf="@+id/save"
+        android:layout_marginStart="30dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4c5661"
+        android:layout_marginTop="11dp"
+        android:text="@string/replay"
+        android:layout_marginStart="18dp"
+        android:layout_below="@+id/rewrite"
+        android:layout_alignStart="@+id/replay" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save"
+        android:textColor="#4c5661"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/rewrite"
+        android:layout_marginEnd="18dp"
+        android:text="@string/restart"
+        android:textColor="#4c5661"/>
+
+    <ImageView
+        android:id="@+id/popup_bear"
+        android:layout_width="760dp"
+        android:layout_height="340dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/cut_popup_bear" />
+
+    <ImageView
+        android:id="@+id/stars_1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/star_set"
+        android:layout_above="@+id/popup_bear"
+        android:layout_toStartOf="@+id/end_txt" />
+    <ImageView
+        android:id="@+id/stars_2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/star_set"
+        android:layout_above="@+id/popup_bear"
+        android:layout_alignStart="@+id/textView3" />
+
+
+</RelativeLayout>
