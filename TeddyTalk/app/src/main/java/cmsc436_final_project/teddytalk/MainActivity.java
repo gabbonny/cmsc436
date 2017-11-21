@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // start genre activity
+                Intent selectGenreIntent = new Intent(MainActivity.this, SelectGenreActivity.class);
+
+                startActivity(selectGenreIntent);
 
                 Toast.makeText(MainActivity.this,
                         "START!", Toast.LENGTH_SHORT).show();
