@@ -7,6 +7,9 @@ package cmsc436_final_project.teddytalk;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +36,7 @@ public class EndMain extends AppCompatActivity {
     TextView save_txt;
     TextView rewrite_txt;
 
+    private int mCurrRotation = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,19 @@ public class EndMain extends AppCompatActivity {
         curtain = (ImageView) findViewById(R.id.curtain);
         stars_1 = (ImageView) findViewById(R.id.stars_1);
         stars_2 = (ImageView) findViewById(R.id.stars_2);
+
+        mCurrRotation %= 360;
+        float fromRotation = mCurrRotation;
+        float toRotation = mCurrRotation + 360;
+
+        RotateAnimation rotateAnim = new RotateAnimation(
+                fromRotation, toRotation, stars_1.getWidth()/2, stars_1.getHeight()/2);
+
+        rotateAnim.setFillAfter(true);
+        rotateAnim.setDuration(1000);
+
+        stars_1.startAnimation(rotateAnim);
+        stars_2.startAnimation(rotateAnim);
 
         replay_button = (ImageView) findViewById(R.id.replay);
         save_button = (ImageView) findViewById(R.id.save);
