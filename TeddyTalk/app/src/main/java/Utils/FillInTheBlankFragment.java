@@ -1,6 +1,4 @@
-package StoryUtil;
-
-import java.util.ArrayList;
+package Utils;
 
 /**
  * Created by Stefani Moore on 11/7/2017.

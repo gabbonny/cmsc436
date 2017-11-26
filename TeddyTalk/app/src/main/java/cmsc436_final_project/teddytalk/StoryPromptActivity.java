@@ -1,7 +1,6 @@
 package cmsc436_final_project.teddytalk;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -9,27 +8,19 @@ import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import StoryUtil.CompleteFragment;
-import StoryUtil.FillInTheBlankFragment;
-import StoryUtil.MultipleChoiceFragment;
-import StoryUtil.Sentence;
+import Utils.*;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.ImageButton;
 
 /**
  * Created by Stefani Moore on 11/12/2017.
  */
 
-public class StoryPromptActivity extends Activity implements ListSelectionListener{
+public class StoryPromptActivity extends Activity implements OnDataPass{
 
     private final String TAG = "storyPromptActivity";
 
@@ -46,19 +37,20 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
     private String storyTitle;
     private ArrayList<String> prompts;
 
-    // variables for sound functioonality
+    // Variables for sound functionality
 
     // AudioManager
     private AudioManager mAudioManager;
     // SoundPool
     private SoundPool mSoundPool;
-    // ID for the bubble popping sound
-    private int mSoundID;
+    // ID for the bubble popping and boing sound
+    private int mPopSoundID;
+    private int mBoingSoundID;
     // Audio volume
     private float mStreamVolume;
 
     //Fragments
-    private FragmentManager manager;
+    private FragmentManager mFragmentManager;
 
     public void onCreate(Bundle savedInstanceState){
 
@@ -66,62 +58,10 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
 
         setContentView(R.layout.activity_story_prompt);
 
-        // Get the fragment manager
-        manager = getFragmentManager();
-
-        // start transaction
-        FragmentTransaction transaction = manager.beginTransaction();
 
 
-        //TODO retrieve file name from intent extras
-        // This file name should be passed in
-        // from the previous activity to this one depending on the user's choice
-        // of story genre
-        promptFilename = "prompts_heroStory.txt";
-
-        //create the buffer to read the prompt
-        try {
-
-            Log.i(TAG, "Create Buffer to read prompt " + promptFilename);
-
-
-            promptReader = new BufferedReader (
-                new InputStreamReader(getAssets().open(promptFilename)));
-
-            //reade the title (It should always be the first line)
-            storyTitle = promptReader.readLine();
-
-            //move to the 3rd line which is the first prompt;
-            promptReader.readLine();
-        } catch (IOException e){
-            Log.i(TAG, "Could not open file " + promptFilename);
-        }
-
-        //TODO get the view
-        //TODO get the next button and set listener
-
-        ImageButton backButton = findViewById(R.id.back_btn);
-        ImageButton nextButton = findViewById(R.id.next_btn);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                mSoundPool.play(mSoundID, mStreamVolume,
-                        mStreamVolume, 1, 0, 1.0f);
-            }
-        });
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                mSoundPool.play(mSoundID, mStreamVolume,
-                        mStreamVolume, 1, 0, 1.0f);
-            }
-        });
+        // Set onClickListener for the Back and Next buttons
+        setControlButtonsOnClickListener();
 
     }
 
@@ -177,16 +117,70 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
 
         mSoundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
 
-        mSoundID = mSoundPool.load(this, R.raw.bubble_pop, 1);
+        mPopSoundID = mSoundPool.load(this, R.raw.bubble_pop, 1);
+        mBoingSoundID = mSoundPool.load(this, R.raw.boing, 1);
 
     }
 
     @Override
     protected void onPause() {
-        mSoundPool.unload(mSoundID);
+        mSoundPool.unload(mPopSoundID);
         mSoundPool.release();
         mSoundPool = null;
         super.onPause();
+    }
+
+    /**
+     * This method sets onClickListeners to the Back and Next Buttons
+     */
+    private void setControlButtonsOnClickListener(){
+
+        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton nextButton = findViewById(R.id.next_btn);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Play pop sound
+                playPopSoundEffect();
+
+                //TODO Add back functionallity
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Play pop sound
+                playPopSoundEffect();
+
+                // TODO add going to next fragment functionality
+            }
+        });
+
+    }
+
+    /**
+     * Add a fragment on top of the current tab
+     */
+    public void addFragmentOnTop(PrompFragment fragment) {
+        mFragmentManager.beginTransaction()
+                .replace(R.id.prompt_fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
+
+    private void playPopSoundEffect(){
+        mSoundPool.play(mPopSoundID, mStreamVolume,
+                mStreamVolume, 1, 0, 1.0f);
+    }
+
+    @Override
+    public void onDataPass(String data) {
+        Log.d("LOG","hello " + data);
     }
 
 }

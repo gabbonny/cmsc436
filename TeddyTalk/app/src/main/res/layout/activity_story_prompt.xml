@@ -12,116 +12,14 @@
         <FrameLayout
             android:id="@+id/prompt_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
-
-                <RelativeLayout
-                    android:id="@+id/prompt_wrapper"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/prompt_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="17dp"
-                            android:text="The heros favorite toy was"
-                            android:textColor="@android:color/background_dark"
-                            android:textSize="25sp"
-                            tools:layout_editor_absoluteX="16dp"
-                            tools:layout_editor_absoluteY="35dp" />
-
-                        <EditText
-                            android:id="@+id/editText4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/prompt_text"
-                            android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="Name"
-                            tools:layout_editor_absoluteX="70dp"
-                            tools:layout_editor_absoluteY="72dp" />
-
-                </RelativeLayout>
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/prompt_options_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/prompt_fragment_container"
-            android:layout_marginBottom="80dp" >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true">
-
-                        <Button
-                            android:id="@+id/option1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginStart="31dp"
-                            android:layout_marginTop="23dp"
-                            android:background="@color/option1_bg"
-                            android:padding="20dp"
-                            android:rotation="-15"
-                            android:text="Button"
-                            android:textSize="18sp" />
-
-                        <Button
-                            android:id="@+id/option2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBaseline="@+id/option1"
-                            android:layout_alignBottom="@+id/option1"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="28dp"
-                            android:background="@color/option2_bg"
-                            android:padding="20dp"
-                            android:rotation="15"
-                            android:text="Button"
-                            android:textSize="18sp" />
-
-                        <Button
-                            android:id="@+id/option3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignStart="@+id/option1"
-                            android:layout_marginBottom="16dp"
-                            android:background="@color/option3_bg"
-                            android:padding="20dp"
-                            android:rotation="5"
-                            android:text="Button"
-                            android:textSize="18sp" />
-
-                        <Button
-                            android:id="@+id/option4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBaseline="@+id/option3"
-                            android:layout_alignBottom="@+id/option3"
-                            android:layout_alignStart="@+id/option2"
-                            android:background="@color/option4_bg"
-                            android:padding="20dp"
-                            android:rotation="-5"
-                            android:text="Button"
-                            android:textSize="18sp" />
-
-                </RelativeLayout>
-
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/control_btns_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
