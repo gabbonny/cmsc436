@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEE8C8"
-    tools:context="com.example.gabby.teddytalksend.End_main">
+    android:background="#FEE8C8">
 
     <Button
         android:id="@+id/button"
