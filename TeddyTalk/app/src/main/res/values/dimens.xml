@@ -1,3 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="top_left_rotation">-15</dimen>
+    <dimen name="top_right_rotation">15</dimen>
+    <dimen name="bottom_left_rotation">5</dimen>
+    <dimen name="bottom_right_rotation">-5</dimen>
 </resources>
