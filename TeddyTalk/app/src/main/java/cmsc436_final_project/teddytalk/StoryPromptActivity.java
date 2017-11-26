@@ -1,6 +1,9 @@
 package cmsc436_final_project.teddytalk;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -17,6 +20,10 @@ import StoryUtil.Sentence;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
+import android.widget.ImageButton;
 
 /**
  * Created by Stefani Moore on 11/12/2017.
@@ -38,6 +45,17 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
     private String promptFilename;
     private String storyTitle;
     private ArrayList<String> prompts;
+
+    // variables for sound functioonality
+
+    // AudioManager
+    private AudioManager mAudioManager;
+    // SoundPool
+    private SoundPool mSoundPool;
+    // ID for the bubble popping sound
+    private int mSoundID;
+    // Audio volume
+    private float mStreamVolume;
 
     //Fragments
     private FragmentManager manager;
@@ -82,6 +100,28 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
         //TODO get the view
         //TODO get the next button and set listener
 
+        ImageButton backButton = findViewById(R.id.back_btn);
+        ImageButton nextButton = findViewById(R.id.next_btn);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                mSoundPool.play(mSoundID, mStreamVolume,
+                        mStreamVolume, 1, 0, 1.0f);
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                mSoundPool.play(mSoundID, mStreamVolume,
+                        mStreamVolume, 1, 0, 1.0f);
+            }
+        });
 
     }
 
@@ -125,5 +165,28 @@ public class StoryPromptActivity extends Activity implements ListSelectionListen
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+
+        mStreamVolume = (float) mAudioManager
+                .getStreamVolume(AudioManager.STREAM_MUSIC)
+                / mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+
+        mSoundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+
+        mSoundID = mSoundPool.load(this, R.raw.bubble_pop, 1);
+
+    }
+
+    @Override
+    protected void onPause() {
+        mSoundPool.unload(mSoundID);
+        mSoundPool.release();
+        mSoundPool = null;
+        super.onPause();
+    }
 
 }
