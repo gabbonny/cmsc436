@@ -3,11 +3,14 @@ package cmsc436_final_project.teddytalk;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
+import android.media.Image;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
@@ -33,22 +36,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //setUpSound(); // set up sound stuff
-
         ColorDrawable colorDraw = new ColorDrawable(Color.parseColor("#882472"));//#20a780
-
         getSupportActionBar().setBackgroundDrawable(colorDraw);
-        ImageButton implicitActivationButton = (ImageButton) findViewById(R.id.start_button);
-        implicitActivationButton.setOnClickListener(new View.OnClickListener() {
 
-//            Animation anim = new ScaleAnimation(
-//                    1f, 1f, // Start and end values for the X axis scaling
-//                    startScale, endScale, // Start and end values for the Y axis scaling
-//                    Animation.RELATIVE_TO_SELF, 0f, // Pivot point of X scaling
-//                    Animation.RELATIVE_TO_SELF, 1f); // Pivot point of Y scaling
-//    anim.setFillAfter(true); // Needed to keep the result of the animation
-//    anim.setDuration(1000);
-//    v.startAnimation(anim);
+        ImageView stars1 = findViewById(R.id.stars1);
+        ImageView stars2 = findViewById(R.id.stars2);
+
+        // setting animation effects for stars
+        ScaleAnimation anim = new ScaleAnimation(0f, 1f, 0f, 1f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            anim.setFillAfter(true); // Needed to keep the result of the animation
+        anim.setDuration(4000);
+        anim.setRepeatCount(Animation.INFINITE);
+
+        stars1.startAnimation(anim);
+        stars2.startAnimation(anim);
+
+        ImageButton implicitActivationButton = findViewById(R.id.start_button);
+        implicitActivationButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -59,9 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 mSoundPool.play(mSoundID, mStreamVolume,
                         mStreamVolume, 1, 0, 1.0f);
                 startActivity(selectGenreIntent);
-//                Toast.makeText(MainActivity.this,
-//                        "START!", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
