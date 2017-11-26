@@ -17,7 +17,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SelectGenreActivity"></activity>
+        <activity android:name=".SelectGenreActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".StoryPromptActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
