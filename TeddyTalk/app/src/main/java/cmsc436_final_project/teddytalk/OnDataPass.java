@@ -4,5 +4,5 @@ package cmsc436_final_project.teddytalk;
 // StoryPromptActivity when user clicks selected input
 
 interface OnDataPass {
-    void onDataPass(String index);
+    void onDataPass(String data, int index);
 }

@@ -18,29 +18,40 @@
             android:layout_alignParentTop="true">
 
             <TextView
-                android:id="@+id/prompt_text"
+                android:id="@+id/prompt_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="17dp"
-                android:text="The heros favorite toy was"
+                android:layout_marginTop="10dp"
+                android:text="Sample Text Sample Text"
                 android:textColor="@android:color/background_dark"
-                android:textSize="25sp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="35dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/fillInOption"
-                tools:layout_editor_absoluteX="70dp"
-                tools:layout_editor_absoluteY="72dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/prompt_text"
+                android:layout_below="@+id/prompt_text1"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:padding="5dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/prompt_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fillInOption"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:padding="5dp"
+                android:visibility="invisible" />
 
         </RelativeLayout>
 
@@ -69,10 +80,11 @@
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="23dp"
                 android:background="@color/option1_bg"
-                android:padding="15dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:padding="5dp"
                 android:rotation="-15"
                 android:text="Button"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/option2"
@@ -83,10 +95,11 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="28dp"
                 android:background="@color/option2_bg"
-                android:padding="15dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:padding="5dp"
                 android:rotation="15"
                 android:text="Button"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/option3"
@@ -96,10 +109,11 @@
                 android:layout_below="@+id/option1"
                 android:layout_marginTop="40dp"
                 android:background="@color/option3_bg"
-                android:padding="15dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:padding="5dp"
                 android:rotation="5"
                 android:text="Button"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/option4"
@@ -109,10 +123,11 @@
                 android:layout_alignBottom="@+id/option3"
                 android:layout_alignStart="@+id/option2"
                 android:background="@color/option4_bg"
-                android:padding="15dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:padding="5dp"
                 android:rotation="-5"
                 android:text="Button"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
         </RelativeLayout>
 

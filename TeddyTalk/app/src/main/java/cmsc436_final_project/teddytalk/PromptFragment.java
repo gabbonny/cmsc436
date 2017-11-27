@@ -7,6 +7,8 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import Utils.MyBounceInterpolator;
+import Utils.Prompt;
 
 import static android.content.Context.AUDIO_SERVICE;
 
@@ -26,7 +29,7 @@ import static android.content.Context.AUDIO_SERVICE;
  * Created by Stefani Moore on 11/16/2017.
  */
 
-public class PrompFragment extends Fragment{
+public class PromptFragment extends Fragment{
 
     private static final String TAG = "PromptFragment";
 
@@ -41,43 +44,64 @@ public class PrompFragment extends Fragment{
     // Audio volume
     private float mStreamVolume;
 
-    // Variables used to access layout
-    private RelativeLayout mPromptContainer;
     private RelativeLayout mOptionsContainer;
 
     // Variables used to keep track of the content of the fragment
-    private String mDefaultFillInText;
-    private OnDataPass dataPasser;
+    private Prompt mPrompt;
+
+
+    public void setPrompt(Prompt prompt){
+        mPrompt = prompt;
+    }
 
     /**
      * This method fills in the content for the current fragment
-     * @param promptText The actual prompt
-     * @param defaultFillInText The default text for the user input EditTExt view (e.g., "Enter the a name")
-     * @param options The pre-defined options (4) to display.
      */
-    public void setPrompt(String promptText, String defaultFillInText, String[] options){
+    public void setPromptContent(){
 
-        // Store defaultFillinText
-        mDefaultFillInText = defaultFillInText;
+        Log.i(TAG, "Setting Prompt Content");
 
-        // Get the prompt text
-        TextView mPrompt = getActivity().findViewById(R.id.prompt_text);
+        // Set the prompt texts
+        setPromptTexts();
 
-        // Set the prompt text
-        mPrompt.setText(promptText);
+        // Check if the current prompt alredy has a user choice
+        if(mPrompt.getUserChoice() != null) {
 
-        // Set the fill in option text
-        updateFillInOption(mDefaultFillInText);
+            //display saved user choice
+            updateFillInOption(mPrompt.getUserChoice());
+        } else {
+            // Set the fill in option text
+            updateFillInOptionHint();
+        }
+
 
         // Set onClickListener for the fill in option
         final EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
-        fillInOption.setOnClickListener(new View.OnClickListener(){
+        fillInOption.addTextChangedListener(new TextWatcher() {
 
             @Override
-            public void onClick(View v) {
-                passData(fillInOption.getText().toString());
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //do nothing
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //do nothing
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Log.i(TAG, "afterTextChanged");
+
+                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(s.toString())) {
+                    updateFillInOption(fillInOption.getText().toString().trim());
+                }
+
             }
         });
+
+        String[] options = mPrompt.getFillInOptions();
 
         // Set the options choices
         for(int i = 0; i < mOptionsContainer.getChildCount(); i++) {
@@ -93,9 +117,7 @@ public class PrompFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, getClass().getSimpleName() + ":entered onCreate()");
         super.onCreate(savedInstanceState);
-
         setRetainInstance(true);
-
     }
 
     // Called to create the content view for this Fragment
@@ -103,6 +125,7 @@ public class PrompFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.i(TAG, getClass().getSimpleName() + ":entered onCreateView()");
+
 
         // Inflate the layout defined in quote_fragment.xml
         // The last parameter is false because the returned view does not need to be attached to the container ViewGroup
@@ -113,12 +136,17 @@ public class PrompFragment extends Fragment{
     // Set up some information about the mQuoteView TextView
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+
         Log.i(TAG, getClass().getSimpleName() + ":entered onActivityCreated()");
+
         super.onActivityCreated(savedInstanceState);
 
-        // Save instances to layouts
-        mPromptContainer = getActivity().findViewById(R.id.prompt_wrapper);
+        // Save instances to layout that holds the options
         mOptionsContainer = getActivity().findViewById(R.id.options_wrapper);
+
+        //display the prompt content
+        setPromptContent();
+
     }
 
 
@@ -132,7 +160,7 @@ public class PrompFragment extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        dataPasser = (OnDataPass) context;
+        Log.i(TAG, getClass().getSimpleName() + ":entered onAttach()");
     }
 
     @Override
@@ -207,6 +235,29 @@ public class PrompFragment extends Fragment{
         });
     }
 
+    private void setPromptTexts(){
+
+        Log.i(TAG, "Setting PromptText");
+
+        // Get the TextView references
+        TextView mPromptText1 = getActivity().findViewById(R.id.prompt_text1);
+        TextView mPromptText2 = getActivity().findViewById(R.id.prompt_text2);
+
+        // Get the prompt texts
+        String[] promptTexts = mPrompt.getPromptTexts();
+
+        // Set the prompt text
+        mPromptText1.setText(promptTexts[0]);
+
+        if(promptTexts[1] != null){
+            mPromptText2.setText(promptTexts[1]);
+            mPromptText2.setVisibility(EditText.VISIBLE);
+        } else {
+            mPromptText2.setVisibility(EditText.INVISIBLE);
+        }
+
+    }
+
     /**
      * This method updates the fillInOption EditText with the given option.
      * @param option The new text for the fillInOption View
@@ -215,40 +266,46 @@ public class PrompFragment extends Fragment{
 
         Log.i(TAG, "Updating fillInOption with \"" + option);
 
-        // get instance of the view
-        EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
+        // check if option is null (first time loading the fragment)
+        // or if user entered blank spaces only
+        if(option == null || option.length() == 0){
 
-        // grab the color for when the view is filled in
-        int color = getResources().getColor(R.color.filledInOption);
+            updateFillInOptionHint();
 
+            //reset user choice
+            mPrompt.setUserChoice(null);
 
-        if(option.trim().equals("") || option.equals(mDefaultFillInText)){
+        } else {
 
-            //set text to default in case it was an empty string
-            option = mDefaultFillInText;
+            // get instance of the view
+            EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
 
-            //set bg back to white
-            color  = Color.WHITE;
+            // grab the color for when the view is filled in
+            int color = getResources().getColor(R.color.filledInOption);
+
+            // Save the user option
+            mPrompt.setUserChoice(option);
+
+            // update bg back to white
+            fillInOption.setBackgroundColor(color);
+
+            //fill int the blank with the input
+            fillInOption.setText(option);
+            fillInOption.setTextColor(getResources().getColor(R.color.colorAccent));
 
         }
 
-        // update bg back to white
-        fillInOption.setBackgroundColor(color);
 
-        //fill int the blank with the input
-        fillInOption.setText(option);
-
-        //pass the data to parent activity
-        passData(option);
     }
 
-    /**
-     * This method notified the parent activity that the user has selected
-     * or typed an input to the current prompt
-     * @param option The user input
-     */
-    public void passData(String option){
-        dataPasser.onDataPass(option);
+    private void updateFillInOptionHint(){
+        // get instance of the view
+        EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
+        fillInOption.setHint(mPrompt.getDefaultFillInText());
+        // update bg back to white
+        fillInOption.setBackgroundColor(Color.WHITE);
+        fillInOption.getText().clear();
+        fillInOption.setTextColor(Color.GRAY);
     }
 
 
@@ -277,5 +334,10 @@ public class PrompFragment extends Fragment{
         mSoundPool.play(mBoingSoundID, mStreamVolume,
                 mStreamVolume, 1, 0, 1.0f);
     }
+
+    public boolean isCompleted(){
+        return mPrompt.getUserChoice() != null;
+    }
+
 
 }
