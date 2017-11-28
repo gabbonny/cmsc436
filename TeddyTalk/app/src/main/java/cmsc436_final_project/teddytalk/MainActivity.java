@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // start genre activity
                 Intent selectGenreIntent = new Intent(MainActivity.this, SelectGenreActivity.class);
-
                 mSoundPool.play(mSoundID, mStreamVolume,
                         mStreamVolume, 1, 0, 1.0f);
                 startActivity(selectGenreIntent);

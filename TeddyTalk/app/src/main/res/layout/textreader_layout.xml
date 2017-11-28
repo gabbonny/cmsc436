@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/Talking_Bear" />
+        app:srcCompat="@drawable/talking_bear" />
 
     <FrameLayout
         android:id="@+id/speech_container"
