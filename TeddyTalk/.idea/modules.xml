@@ -3,13 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TeddyTalk.iml" filepath="$PROJECT_DIR$/TeddyTalk.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" filepath="C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\app\app.iml" filepath="C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\app\app.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
->>>>>>> 8808bb84675f18161e4ff83b32e5de04cd1ab923
     </modules>
   </component>
 </project>

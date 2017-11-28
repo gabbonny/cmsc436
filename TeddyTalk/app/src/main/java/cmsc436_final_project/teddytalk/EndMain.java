@@ -4,6 +4,7 @@ package cmsc436_final_project.teddytalk;
  * Created by Stefani Moore on 11/25/2017.
  */
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -96,8 +97,8 @@ public class EndMain extends AppCompatActivity {
     public void replay(){
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
-//        Intent go = new Intent(End_main.this,ReadBack_Actvity.class);
-//        startActivity(go);
+        Intent go = new Intent(EndMain.this,TextReader.class);
+        startActivity(go);
 
     }
     public void save(){
@@ -111,7 +112,7 @@ public class EndMain extends AppCompatActivity {
     public void rewrite(){
         //CALLED IN XML
         //Goes back to rewrite story, pick a genre and do prompt activities again
-//        Intent go = new Intent(End_main.this,SelectGenreActivity.class);
-//        startActivity(go);
+        Intent go = new Intent(EndMain.this,SelectGenreActivity.class);
+        startActivity(go);
     }
 }
