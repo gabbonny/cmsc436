@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TeddyTalk.iml" filepath="$PROJECT_DIR$/TeddyTalk.iml" />
       <module fileurl="file://C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" filepath="C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" />
-      <module fileurl="file://C:\Users\gabby\git_projects\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" filepath="C:\Users\gabby\git_projects\cmsc436_teddy_talk\TeddyTalk\TeddyTalk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\gabby\git_projects\cmsc436_teddy_talk\TeddyTalk\app\app.iml" filepath="C:\Users\gabby\git_projects\cmsc436_teddy_talk\TeddyTalk\app\app.iml" />
       <module fileurl="file://C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\app\app.iml" filepath="C:\Users\Jonelle\CMSC436 Group Project\cmsc436_teddy_talk\TeddyTalk\app\app.iml" />
     </modules>
   </component>
