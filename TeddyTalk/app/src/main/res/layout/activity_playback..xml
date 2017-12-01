@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/control_buttons"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/playback_bg2"
+    android:visibility="visible"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <LinearLayout
+        android:id="@+id/control_btns_wrapper"
+        android:layout_width="0dp"
+        android:layout_height="103dp"
+        android:background="@color/prompt_option1"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back_btn_descrip"
+            android:scaleType="fitStart"
+            android:src="@drawable/back_button"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitEnd"
+            android:src="@drawable/next_button"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

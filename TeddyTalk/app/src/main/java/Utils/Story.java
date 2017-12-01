@@ -1,18 +1,11 @@
 package Utils;
 
-import android.content.res.AssetManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * Created by Stefani Moore on 11/26/2017.
@@ -22,10 +15,10 @@ public class Story {
 
     private static final String TAG = "Story Class";
 
-    // Variables used for reading from life
-    private final static String START_INPUT_OPTIONS = "*";
-    private final static String INPUT_OPTIONS_SEPARATOR = ",";
-    private InputStream inputStream;
+    // ---- Story Types
+    public static final String STORY_GENRE_FANTASY = "fantasy_story.txt";
+    public static final String STORY_GENRE_ADVENTURE = "adventure_story.txt";
+    public static final String STORY_GENRE_HERO = "hero_story.txt";
 
     // The prompts will are stored in a linked list fashion
     private Prompt head;
@@ -36,12 +29,11 @@ public class Story {
     // Flag to determine if the Story has been filled
     private boolean completed = false;
 
-    public Story(InputStream inputStream) {
-        this.inputStream = inputStream;
+    public Story(String fileName, InputStream inputStream) {
         try {
 
             //fill in the story from file
-            readPromptsFromFile();
+            loadStoryFromFile(fileName, inputStream);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -56,35 +48,41 @@ public class Story {
         // Check if already iterated through all the prompts;
         if(!completed) {
 
-            //if first prompt
+            //first prompt being read
             if(currPrompt == null) {
                 currPrompt = head;
                 return currPrompt;
             }
 
-            currPrompt = currPrompt.getNextPrompt();
+            //if not the last prompt move to the next
+            if(currPrompt.getNextPrompt() != null){
+                currPrompt = currPrompt.getNextPrompt();
+                completed = false;
+                return currPrompt;
+            } else {
 
-            // if just sent out a null result, this story has been completed.
-            if(currPrompt == null) {
+                //last prompt, don't update the prompt, just return null
                 completed = true;
+                return null;
             }
-            return currPrompt;
-
         } else {
             return null;
         }
     }
 
     public Prompt getPreviousPrompt(){
-        if(currPrompt.getPrevPrompt() == null) {
-            Log.i(TAG, "Previous is null");
-            return null;
-        } else {
+        if(currPrompt != null) {
 
-            currPrompt = currPrompt.getPrevPrompt();
-            completed = false;
-            return currPrompt;
+            if (currPrompt.getPrevPrompt() == null) {
+                Log.i(TAG, "Previous is null");
+                return null;
+            } else {
+                currPrompt = currPrompt.getPrevPrompt();
+                completed = false;
+                return currPrompt;
+            }
         }
+        return null;
     }
 
     /**
@@ -118,10 +116,13 @@ public class Story {
         }
     }
 
-    private void readPromptsFromFile() throws IOException {
-        BufferedReader promptReader = new BufferedReader(new InputStreamReader(inputStream));
+    private void loadStoryFromFile(String fileName, InputStream inputStream) throws IOException {
 
-        Log.i(TAG, "Loading Story");
+        Log.i(TAG, "Loading Story " + fileName);
+
+        final BufferedReader promptReader = new BufferedReader(new InputStreamReader(inputStream));
+        final String START_INPUT_OPTIONS = "*";
+        final String INPUT_OPTIONS_SEPARATOR = ",";
 
         String[] options = new String[Prompt.MAX_NUM_OPTIONS];
         String defaultFillInText = null;

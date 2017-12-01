@@ -77,27 +77,38 @@ public class PromptFragment extends Fragment{
 
         // Set onClickListener for the fill in option
         final EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
-        fillInOption.addTextChangedListener(new TextWatcher() {
+//        fillInOption.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//                //do nothing
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                //do nothing
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//                Log.i(TAG, "afterTextChanged");
+//
+//                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(s.toString())) {
+//                    updateFillInOption(fillInOption.getText().toString().trim());
+//                }
+//
+//            }
+//        });
 
+        fillInOption.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                //do nothing
-            }
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.i(TAG, "onFocusChange");
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //do nothing
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                Log.i(TAG, "afterTextChanged");
-
-                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(s.toString())) {
+                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(fillInOption.getText().toString())) {
                     updateFillInOption(fillInOption.getText().toString().trim());
                 }
-
             }
         });
 
