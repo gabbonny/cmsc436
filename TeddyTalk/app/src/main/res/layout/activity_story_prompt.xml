@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/fab_margin"
     android:visibility="visible"
-    android:background="@drawable/fantansy_story_bg"
+    android:background="@drawable/fantasy_story_bg_1"
     tools:layout_editor_absoluteY="81dp">
 
         <FrameLayout
