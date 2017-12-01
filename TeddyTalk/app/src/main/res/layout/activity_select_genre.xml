@@ -36,9 +36,8 @@
         android:layout_alignEnd="@+id/button2"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:background="#0000"
         android:scaleType="fitXY"
-        android:src="@drawable/next" />
+        android:src="@drawable/next_button" />
 
     <TextView
         android:id="@+id/textView"

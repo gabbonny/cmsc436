@@ -4,10 +4,12 @@ package cmsc436_final_project.teddytalk;
  * Created by Stefani Moore on 11/25/2017.
  */
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
@@ -53,22 +55,11 @@ public class EndMain extends AppCompatActivity {
         stars_1 = (ImageView) findViewById(R.id.stars_1);
         stars_2 = (ImageView) findViewById(R.id.stars_2);
 
-        mCurrRotation %= 360;
-        float fromRotation = mCurrRotation;
-        float toRotation = mCurrRotation + 360;
-
-        RotateAnimation rotateAnim = new RotateAnimation(
-                fromRotation, toRotation, stars_1.getWidth()/2, stars_1.getHeight()/2);
-
-        rotateAnim.setFillAfter(true);
-        rotateAnim.setDuration(1000);
-
-        stars_1.startAnimation(rotateAnim);
-        stars_2.startAnimation(rotateAnim);
-
         replay_button = (ImageView) findViewById(R.id.replay);
         save_button = (ImageView) findViewById(R.id.save);
         rewrite_button = (ImageView) findViewById(R.id.rewrite);
+
+        pop_up_bear = (ImageView) findViewById(R.id.popup_bear);
 
         replay_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,13 +82,25 @@ public class EndMain extends AppCompatActivity {
             }
         });
 
+        Animation animSlide = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_left);
+        Animation animSlideUp = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.from_bottom_slide_up);
+
+        curtain.startAnimation(animSlide);
+        replay_button.startAnimation(animSlide);
+        save_button.startAnimation(animSlide);
+        rewrite_button.startAnimation(animSlide);
+
+        pop_up_bear.startAnimation(animSlideUp);
+
     }
 
     public void replay(){
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
-//        Intent go = new Intent(End_main.this,ReadBack_Actvity.class);
-//        startActivity(go);
+        Intent go = new Intent(EndMain.this,TextReader.class);
+        startActivity(go);
 
     }
     public void save(){
@@ -111,7 +114,7 @@ public class EndMain extends AppCompatActivity {
     public void rewrite(){
         //CALLED IN XML
         //Goes back to rewrite story, pick a genre and do prompt activities again
-//        Intent go = new Intent(End_main.this,SelectGenreActivity.class);
-//        startActivity(go);
+        Intent go = new Intent(EndMain.this,SelectGenreActivity.class);
+        startActivity(go);
     }
 }
