@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_story_playback_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/playback_bg2"
+    android:background="@drawable/generic_story_bg_2"
     android:visibility="visible"
     tools:layout_editor_absoluteY="81dp">
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="234dp"
+        android:layout_alignParentTop="true"></FrameLayout>
+
     <LinearLayout
         android:id="@+id/control_btns_wrapper"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="103dp"
+        android:layout_alignParentBottom="true"
         android:background="@color/prompt_option1"
         android:orientation="horizontal"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="408dp">
 
         <ImageButton
             android:id="@+id/back_btn"
@@ -52,4 +54,4 @@
             android:visibility="visible" />
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
