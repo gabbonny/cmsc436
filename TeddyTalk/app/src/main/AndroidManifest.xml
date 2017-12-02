@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TextReaderActivity">
+        <activity android:name=".StoryPlaybackActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

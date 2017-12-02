@@ -9,13 +9,13 @@ import android.widget.EditText;
  * Created by gabby on 11/24/2017.
  */
 
-public class TextReaderActivity extends Activity {
+public class StoryPlaybackActivity extends Activity {
 
     //this will be the main activity that the story fragments will cling onto
     //this will contain only the back and next buttons that will help navigate through each
     //of the sentense fragments being used.
     //at the end of the story and the next button is pressed, the whole story string will
-    //be sent to TextReaderActivity activity where the strings will be read one at a time using the
+    //be sent to StoryPlaybackActivity activity where the strings will be read one at a time using the
     //TexttoSpeechContainer speak method
 
     private final String TAG = "textReader";

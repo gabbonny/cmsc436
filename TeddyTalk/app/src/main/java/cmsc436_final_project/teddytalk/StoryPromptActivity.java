@@ -162,7 +162,7 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
 
                         //Check if story is actually completed
 //                        if(finishedStory != null){
-////                            Intent textReaderActivity = new Intent(this, TextReaderActivity.class);
+////                            Intent textReaderActivity = new Intent(this, StoryPlaybackActivity.class);
 ////                            textReaderActivity.putExtra(INTENT_DATA, finishedStory);
 //                        }
 

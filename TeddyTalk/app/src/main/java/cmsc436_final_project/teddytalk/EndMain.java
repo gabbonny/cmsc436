@@ -99,7 +99,7 @@ public class EndMain extends AppCompatActivity {
     public void replay(){
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
-        Intent go = new Intent(EndMain.this,TextReader.class);
+        Intent go = new Intent(EndMain.this,StoryPlaybackActivity.class);
         startActivity(go);
 
     }
