@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_story_playback_layout"
     android:layout_width="match_parent"
@@ -9,11 +10,38 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/speach_bubble"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="160dp"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="103dp"></FrameLayout>
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/speech_bubble" />
+
+    <TextView
+        android:id="@+id/prompt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:text="Sample Text Sample Text"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/talking_bear"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/speach_bubble"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/talking_bear" />
 
     <LinearLayout
         android:id="@+id/control_btns_wrapper"

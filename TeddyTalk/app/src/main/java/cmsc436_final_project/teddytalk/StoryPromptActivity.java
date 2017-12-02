@@ -162,7 +162,7 @@ public class StoryPromptActivity extends Activity {
 
                         //Check if story is actually completed
                         if(finishedStory != null){
-                            Intent storyPlaybackActivity = new Intent(getApplicationContext(), EndActivity.class);
+                            Intent storyPlaybackActivity = new Intent(getApplicationContext(), StoryPlaybackActivity.class);
                             storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
                             startActivity(storyPlaybackActivity);
                         }

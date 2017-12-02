@@ -13,7 +13,9 @@ import Utils.*;
 
 import android.app.FragmentManager;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -37,38 +39,32 @@ public class StoryPlaybackActivity extends Activity {
     // Audio volume
     private float mStreamVolume;
 
-    // ---- Variables for managing Fragments
-    private FragmentManager mFragmentManager;
-    private PromptFragment mPromptFragment;
+    //All the prompts filled in from previous activity
+    private  String[] prompts;
+    //to keep track of current prompt being displayed
+    private int nextPrompt;
 
-    // ---- Holds the story chosen by the user
-    private Story story;
+    //Takes care of playing prompt
+    private TextToSpeechContainer speechContainer;
 
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_story_prompt);
+        setContentView(R.layout.activity_story_playback);
 
-        // Get reference to fragment manager
-        mFragmentManager = getFragmentManager();
+        speechContainer.initialize(this);
+        Intent go = new Intent(this, TextToSpeechContainer.class);
+        startActivity(go);
 
         //get story filename from previous activity
-        String fileName = getIntent().getExtras().getString(INTENT_DATA);
-
-        //create the new story based on user choice
-        try {
-            story = new Story(fileName, this.getAssets().open(fileName));
-            Log.i(TAG, story.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        prompts = getIntent().getExtras().getStringArray(INTENT_DATA);
 
         // Set onClickListener for the Back and Next buttons
         setControlButtonsOnClickListener();
 
         //display first fragment
-        setupFragment(story.getNextPrompt());
+        displayPrompt(getNextPrompt());
     }
 
 
@@ -111,23 +107,7 @@ public class StoryPlaybackActivity extends Activity {
                 // Play pop sound
                 playPopSoundEffect();
 
-                //get the previous prompt
-                Prompt prevPrompt = story.getPreviousPrompt();
-
-                //no previous prompt just finish activity
-                if(prevPrompt == null) {
-
-                    Log.i(TAG, "Finishing activity");
-
-                    finish();
-
-                } else {
-
-                    Log.i(TAG, "Loading previous fragment.");
-
-                    mPromptFragment.setPrompt(prevPrompt);
-                    mPromptFragment.setPromptContent();
-                }
+                //TODO make it display the previous prompt
 
             }
         });
@@ -142,77 +122,42 @@ public class StoryPlaybackActivity extends Activity {
                 // Play pop sound
                 playPopSoundEffect();
 
-                //check if current prompt has been completed
-                if(mPromptFragment.isCompleted()){
+                //TODO make it display the next prompt
 
-                    //Prompt compelted
-                    Log.i(TAG, "Next Prompt pressed. State: Current Prompt COMPLETED");
+                String prompt = getNextPrompt();
+                displayPrompt(prompt);
 
-                    Prompt nextPrompt = story.getNextPrompt();
-
-                    //check if nextPrompt is null.
-                    if(nextPrompt == null){
-
-                        //Story is completed. Send story to the next activity
-                        //TODO move to the next activity
-                        Log.i(TAG, "Story Completed moving to the next activity");
-
-                        //get the finished story
-                        String[] finishedStory = story.getFinishedStory();
-
-                        //Check if story is actually completed
-                        if(finishedStory != null){
-                            Intent storyPlaybackActivity = new Intent(getApplicationContext(), EndActivity.class);
-                            storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
-                            startActivity(storyPlaybackActivity);
-                        }
-
-                    } else {
-
-                        //Story is no complete yet. Load the next prompt in the fragment
-                        Log.i(TAG, "Loading new fragment. New prompt: " + nextPrompt.toString());
-
-                        // set the new fragment
-                        mPromptFragment.setPrompt(nextPrompt);
-                        // load the new prompt
-                        mPromptFragment.setPromptContent();
-
-                    }
-
-                } else {
-
-                    //Prompt has not been completed yet
-                    Log.i(TAG, "Next Prompt pressed. State: Current Prompt NOT COMPLETED");
-
-                    Toast.makeText(getApplicationContext(),"Complete this prompt to continue!", Toast.LENGTH_LONG).show();
-                }
             }
         });
-
-    }
-
-    private void setupFragment(Prompt prompt){
-
-
-        if (null == mFragmentManager.findFragmentById(R.id.prompt_fragment_container)) {
-
-            mPromptFragment = new PromptFragment();
-
-            mPromptFragment.setPrompt(prompt);
-
-            mFragmentManager.beginTransaction()
-                    .add(R.id.prompt_fragment_container, mPromptFragment)
-                    .commit();
-        } else {
-
-            mPromptFragment = (PromptFragment) mFragmentManager.findFragmentById(R.id.prompt_fragment_container);
-        }
 
     }
 
     private void playPopSoundEffect(){
         mSoundPool.play(mPopSoundID, mStreamVolume,
                 mStreamVolume, 1, 0, 1.0f);
+    }
+
+
+    private void displayPrompt(String prompt){
+        TextView promptText = findViewById(R.id.prompt_text);
+        promptText.setText(prompt);
+        speechContainer.speak(prompt);
+    }
+
+    private String getNextPrompt(){
+        if(nextPrompt < prompts.length){
+            return prompts[nextPrompt++];
+        } else {
+            return null;
+        }
+    }
+
+    private String getPrevPrompt(){
+        if(nextPrompt > 0){
+            return prompts[--nextPrompt];
+        } else {
+            return null;
+        }
     }
 
 }
