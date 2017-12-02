@@ -10,33 +10,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EndMain extends AppCompatActivity {
+public class EndActivity extends AppCompatActivity {
     //Image view variables for possible animation transition on screen
 
     //transition from the left to right
-    ImageView curtain;
+    private ImageView curtain;
     //stars will dangle down
-    ImageView stars_1;
-    ImageView stars_2;
+    private ImageView stars_1;
+    private ImageView stars_2;
 
     //transition from the bottom to up
-    ImageView pop_up_bear;
+    private ImageView pop_up_bear;
 
     //make these clickable
-    ImageView replay_button;
-    ImageView save_button;
-    ImageView rewrite_button;
+    private ImageView replay_button;
+    private ImageView save_button;
+    private ImageView rewrite_button;
 
 
-    TextView end;
-    TextView replay_txt;
-    TextView save_txt;
-    TextView rewrite_txt;
+    private TextView end;
+    private TextView replay_txt;
+    private TextView save_txt;
+    private TextView rewrite_txt;
 
     private int mCurrRotation = 0;
 
@@ -99,7 +97,7 @@ public class EndMain extends AppCompatActivity {
     public void replay(){
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
-        Intent go = new Intent(EndMain.this,StoryPlaybackActivity.class);
+        Intent go = new Intent(EndActivity.this,StoryPlaybackActivity.class);
         startActivity(go);
 
     }
@@ -114,7 +112,7 @@ public class EndMain extends AppCompatActivity {
     public void rewrite(){
         //CALLED IN XML
         //Goes back to rewrite story, pick a genre and do prompt activities again
-        Intent go = new Intent(EndMain.this,SelectGenreActivity.class);
+        Intent go = new Intent(EndActivity.this,SelectGenreActivity.class);
         startActivity(go);
     }
 }

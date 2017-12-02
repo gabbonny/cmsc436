@@ -6,12 +6,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 
 /**
  * Created by Stefani Moore on 11/26/2017.
  */
 
-public class Story {
+public class Story implements Serializable {
 
     private static final String TAG = "Story Class";
 

@@ -19,7 +19,8 @@
     <color name="funny_selected">#72c5d6</color>
 
     <color name="filledInOption">#d7fff6</color>
-    <color name="playback_control">#d7fff6</color>
+    <color name="playback_control">#7fffffff</color>
 
     <color name="deselected">#59b2c5f7</color>
+
 </resources>
