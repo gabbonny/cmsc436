@@ -61,11 +61,6 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
         ImageButton next = findViewById(R.id.nextButton);
         next.setOnClickListener(this);
 
-//        // Set animation and sound effects for story option buttons
-//        setOptionOnClickListener(adventure);
-//        setOptionOnClickListener(love);
-//        setOptionOnClickListener(fantasy);
-//        setOptionOnClickListener(funny);
     }
 
     @Override
@@ -75,19 +70,30 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
             // When Hero button gets pressed
             case R.id.adventure_button:
                 Log.i(TAG, "Adventure chosen");
-                Button b =(Button) buttonList.get("adventure");
-                b.setBackgroundColor(Color.YELLOW);
+
+                // Make this button look selected
+                Button adv =(Button) buttonList.get("adventure");
+                adv.setBackgroundColor(getResources().getColor(R.color.adventure_selected));
+                adv.setAlpha(1f);
                 chosen = Story.STORY_GENRE_ADVENTURE;
 
-                b = (Button) buttonList.get("love");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
-                b = (Button) buttonList.get("fantasy");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
+                // Make the others look deselected
+                Button love = (Button) buttonList.get("love");
+                love.setBackgroundColor(getResources().getColor(R.color.deselected));
+                love.setAlpha(0.5f);
+
+                Button fan = (Button) buttonList.get("fantasy");
+                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fan.setAlpha(0.5f);
+
+                Button fun = (Button) buttonList.get("funny");
+                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fun.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);
 
-                // play the boing sound
+                // play the pop button sound
                 mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
 
                 break;
@@ -95,57 +101,83 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
             // When Love button gets pressed
             case R.id.love_button:
                 Log.i(TAG, "Love chosen");
-                b =(Button) buttonList.get("love");
-                b.setBackgroundColor(Color.YELLOW);
+
+                love =(Button) buttonList.get("love");
+                love.setBackgroundColor(getResources().getColor(R.color.love_selected));
+                love.setAlpha(1f);
                 chosen = Story.STORY_LOVE;
 
-                b = (Button) buttonList.get("adventure");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
-                b = (Button) buttonList.get("fantasy");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
+                adv = (Button) buttonList.get("adventure");
+                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
+                adv.setAlpha(0.5f);
+
+                fan = (Button) buttonList.get("fantasy");
+                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fan.setAlpha(0.5f);
+
+                fun = (Button) buttonList.get("funny");
+                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fun.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);
 
-                // play the boing sound
+                // play the bubble pop sound
                 mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 break;
 
             // When Fantasy button gets pressed
             case R.id.fantasy_button:
                 Log.i(TAG, "Fantasy chosen");
-                b =(Button) buttonList.get("fantasy");
-                b.setBackgroundColor(Color.YELLOW);
+
+                fan =(Button) buttonList.get("fantasy");
+                fan.setBackgroundColor(getResources().getColor(R.color.fantasy_selected));
+                fan.setAlpha(1f);
                 chosen = Story.STORY_GENRE_FANTASY;
 
-                b = (Button) buttonList.get("love");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
-                b = (Button) buttonList.get("adventure");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
+                love = (Button) buttonList.get("love");
+                love.setBackgroundColor(getResources().getColor(R.color.deselected));
+                love.setAlpha(0.5f);
 
+                adv = (Button) buttonList.get("adventure");
+                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
+                adv.setAlpha(0.5f);
+
+                fun = (Button) buttonList.get("funny");
+                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fun.setAlpha(0.5f);
                 // start the bounce animation
                 startOnTapAnimation(v);
 
-                // play the boing sound
+                // play the pop bubble sound
                 mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 break;
 
             // When Fantasy button gets pressed
             case R.id.funny_button:
                 Log.i(TAG, "Funny chosen");
-                b =(Button) buttonList.get("funny");
-                b.setBackgroundColor(Color.YELLOW);
+
+                fun =(Button) buttonList.get("funny");
+                fun.setBackgroundColor(getResources().getColor(R.color.funny_selected));
+                fun.setAlpha(1f);
                 chosen = Story.STORY_GENRE_FUNNY;
 
-                b = (Button) buttonList.get("love");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
-                b = (Button) buttonList.get("adventure");
-                b.setBackgroundColor(Color.parseColor("#FF9052"));
+                adv = (Button) buttonList.get("adventure");
+                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
+                adv.setAlpha(0.5f);
+
+                love = (Button) buttonList.get("love");
+                love.setBackgroundColor(getResources().getColor(R.color.deselected));
+                love.setAlpha(0.5f);
+
+                fan =(Button) buttonList.get("fantasy");
+                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
+                fan.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);
 
-                // play the boing sound
+                // play the bubble pop sound
                 mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 break;
 
@@ -170,26 +202,6 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
                 break;
         }
 
-    }
-
-    /**
-     * This method sets onClickListeners to the given button.
-     * Actions include: onTapAnimation, and sound effects
-     */
-    private void setOptionOnClickListener(final Button button){
-
-        button.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                // start the bounce animation
-                startOnTapAnimation(v);
-
-
-                // play the boing sound
-             mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
-            }
-        });
     }
 
     /**

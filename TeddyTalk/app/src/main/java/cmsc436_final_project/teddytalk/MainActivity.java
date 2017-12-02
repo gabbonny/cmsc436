@@ -16,8 +16,6 @@ import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
 
-
-
 public class MainActivity extends AppCompatActivity {
 
     // Sound variables
