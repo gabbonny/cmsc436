@@ -20,7 +20,7 @@ import android.widget.Toast;
  * Created by Stefani Moore on 11/12/2017.
  */
 
-public class StoryPromptActivity extends Activity implements OnDataPass{
+public class StoryPromptActivity extends Activity {
 
     private final String TAG = "storyPromptActivity";
     public final static String INTENT_DATA = "data";
@@ -158,16 +158,14 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
                         Log.i(TAG, "Story Completed moving to the next activity");
 
                         //get the finished story
-//                        Story[] finishedStory = story.getFinishedStory();
+                        String[] finishedStory = story.getFinishedStory();
 
                         //Check if story is actually completed
-//                        if(finishedStory != null){
-////                            Intent textReaderActivity = new Intent(this, StoryPlaybackActivity.class);
-////                            textReaderActivity.putExtra(INTENT_DATA, finishedStory);
-//                        }
-
-
-
+                        if(finishedStory != null){
+                            Intent storyPlaybackActivity = new Intent(getApplicationContext(), EndActivity.class);
+                            storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
+                            startActivity(storyPlaybackActivity);
+                        }
 
                     } else {
 
@@ -193,7 +191,7 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
 
     }
 
-    public void setupFragment(Prompt prompt){
+    private void setupFragment(Prompt prompt){
 
 
         if (null == mFragmentManager.findFragmentById(R.id.prompt_fragment_container)) {
@@ -215,11 +213,6 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
     private void playPopSoundEffect(){
         mSoundPool.play(mPopSoundID, mStreamVolume,
                 mStreamVolume, 1, 0, 1.0f);
-    }
-
-    @Override
-    public void onDataPass(String data, int promptId) {
-        Log.d("LOG","hello " + data);
     }
 
 }

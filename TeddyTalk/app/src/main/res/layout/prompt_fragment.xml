@@ -62,8 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/prompt_fragment_container"
-        android:layout_marginBottom="80dp" >
+        android:layout_below="@+id/prompt_fragment_container">
 
         <RelativeLayout
             android:id="@+id/options_wrapper"
@@ -77,14 +76,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="23dp"
                 android:background="@color/prompt_option1"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
                 android:rotation="-15"
                 android:text="Button"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/option2"
@@ -93,13 +92,13 @@
                 android:layout_alignBaseline="@+id/option1"
                 android:layout_alignBottom="@+id/option1"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="28dp"
                 android:background="@color/prompt_option2"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="5dp"
                 android:rotation="15"
+                android:layout_marginRight="15dp"
                 android:text="Button"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/option3"
@@ -113,7 +112,8 @@
                 android:padding="5dp"
                 android:rotation="5"
                 android:text="Button"
-                android:textSize="14sp" />
+                android:layout_marginLeft="15dp"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/option4"
@@ -121,13 +121,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/option3"
                 android:layout_alignBottom="@+id/option3"
-                android:layout_alignStart="@+id/option2"
+                android:layout_alignEnd="@+id/option2"
                 android:background="@color/prompt_option4"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="5dp"
                 android:rotation="-5"
                 android:text="Button"
-                android:textSize="14sp" />
+                android:layout_marginRight="15dp"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

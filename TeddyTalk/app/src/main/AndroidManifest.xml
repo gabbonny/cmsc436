@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EndMain">
+        <activity android:name=".EndActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

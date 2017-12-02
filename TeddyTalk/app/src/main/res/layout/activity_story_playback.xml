@@ -4,22 +4,23 @@
     android:id="@+id/activity_story_playback_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/generic_story_bg_2"
+    android:background="@drawable/adventure_story_bg_3"
     android:visibility="visible"
     tools:layout_editor_absoluteY="81dp">
 
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="234dp"
-        android:layout_alignParentTop="true"></FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="103dp"></FrameLayout>
 
     <LinearLayout
         android:id="@+id/control_btns_wrapper"
         android:layout_width="match_parent"
         android:layout_height="103dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/prompt_option1"
+
         android:orientation="horizontal"
         android:padding="10dp"
         android:visibility="visible"

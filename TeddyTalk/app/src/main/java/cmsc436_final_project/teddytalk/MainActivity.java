@@ -1,24 +1,21 @@
 package cmsc436_final_project.teddytalk;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
-import android.media.Image;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     // Sound variables
 
@@ -37,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ColorDrawable colorDraw = new ColorDrawable(Color.parseColor("#882472"));//#20a780
-        getSupportActionBar().setBackgroundDrawable(colorDraw);
+//        getSupportActionBar().setBackgroundDrawable(colorDraw);
 
         ImageView stars1 = findViewById(R.id.stars1);
         ImageView stars2 = findViewById(R.id.stars2);

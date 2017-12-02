@@ -1,5 +1,5 @@
 Once upon a time, there were four friends walking in the woods in search of a treasure. The treasure was a golden
-*Enter the treasure., gold, awesome toy, precious stone, magical wand
+*Enter the treasure., gold, cool toy, gem, wand
 
 There was a
 Smart and strategic. The leader  of group and in charge of the treasure map!
@@ -7,7 +7,7 @@ Smart and strategic. The leader  of group and in charge of the treasure map!
 
 There was a
 Brave and bold, and ready to strike at anytime!
-*Enter an animal., tiger, lion, eagle, elephant
+*Enter an animal., tiger, lion, eagle, gorila
 
 There was a
 Funny and energetic, and likes to play pranks and collect things.

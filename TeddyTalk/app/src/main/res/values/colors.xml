@@ -10,5 +10,5 @@
     <color name="prompt_option3">#ff5f80</color>
     <color name="prompt_option4">#72c5d6</color>
     <color name="filledInOption">#d7fff6</color>
-    <color name="playback_control">#115047</color>
+    <color name="playback_control">#7fffffff</color>
 </resources>
