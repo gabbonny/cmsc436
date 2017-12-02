@@ -18,7 +18,9 @@ public class Story {
     // ---- Story Types
     public static final String STORY_GENRE_FANTASY = "fantasy_story.txt";
     public static final String STORY_GENRE_ADVENTURE = "adventure_story.txt";
-    public static final String STORY_GENRE_HERO = "hero_story.txt";
+    public static final String STORY_GENRE_FUNNY = "funny_story.txt";
+    public static final String STORY_LOVE = "love_story.txt";
+
 
     // The prompts will are stored in a linked list fashion
     private Prompt head;
