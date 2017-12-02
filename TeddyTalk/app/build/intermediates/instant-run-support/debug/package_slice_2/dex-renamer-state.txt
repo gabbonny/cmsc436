@@ -1,0 +1,4 @@
+#Sat Dec 02 18:06:49 EST 2017
+base.0=C\:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
+renamed.0=classes.dex
+file.0=C\:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3\\classes.dex

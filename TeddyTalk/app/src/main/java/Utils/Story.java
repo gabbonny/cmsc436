@@ -101,7 +101,6 @@ public class Story implements Serializable {
         String[] finishedPrompts = new String[size];
         Prompt curr = head;
         int i = 0;
-
         while (curr != null){
             finishedPrompts[i] = curr.toString();
             curr = curr.getNextPrompt();
@@ -111,13 +110,6 @@ public class Story implements Serializable {
         return finishedPrompts;
     }
 
-    public void setCurrPrompt(Prompt prompt) {
-        currPrompt = prompt;
-
-        if(currPrompt.getID() < size) {
-            completed = false;
-        }
-    }
 
     private void loadStoryFromFile(String fileName, InputStream inputStream) throws IOException {
 

@@ -103,7 +103,8 @@ public class Prompt  {
     }
 
     public String toString() {
-        return  promptTexts[0] + (userChoice == null ? " [no choice] " : " " + userChoice) + promptTexts[1];
+        return  promptTexts[0] + (userChoice == null ? " [no choice] " : " " + userChoice) +
+                (promptTexts[1] != null ? ". " + promptTexts[1] : "." );
      }
 
 }

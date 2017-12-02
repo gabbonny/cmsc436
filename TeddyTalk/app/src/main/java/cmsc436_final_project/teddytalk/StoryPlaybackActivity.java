@@ -5,18 +5,16 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+
+
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
-import java.io.IOException;
-
-
-import Utils.*;
-
-import android.app.FragmentManager;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.Locale;
 
 /**
  * Created by Stefani Moore on 11/12/2017.
@@ -24,7 +22,8 @@ import android.widget.Toast;
 
 public class StoryPlaybackActivity extends Activity {
 
-    private final String TAG = "StoryPlaybackActivity";
+    private final static String TAG = "StoryPlaybackActivity";
+    private static final int REQUEST_CODE = 0;
     public final static String INTENT_DATA = "data";
 
     // ----- Variables for sound functionality
@@ -39,13 +38,16 @@ public class StoryPlaybackActivity extends Activity {
     // Audio volume
     private float mStreamVolume;
 
+
+    // ----- Variables for using the TextToSpeech functionality
+    private TextToSpeechContainer speechContainer;
+
+    // ----- Variables for displaying promtps
     //All the prompts filled in from previous activity
     private  String[] prompts;
     //to keep track of current prompt being displayed
-    private int nextPrompt;
+    private int currPrompt = -1;
 
-    //Takes care of playing prompt
-    private TextToSpeechContainer speechContainer;
 
     public void onCreate(Bundle savedInstanceState){
 
@@ -55,16 +57,11 @@ public class StoryPlaybackActivity extends Activity {
 
         speechContainer.initialize(this);
         Intent go = new Intent(this, TextToSpeechContainer.class);
-        startActivity(go);
+        startActivityForResult(go, REQUEST_CODE);
 
         //get story filename from previous activity
         prompts = getIntent().getExtras().getStringArray(INTENT_DATA);
 
-        // Set onClickListener for the Back and Next buttons
-        setControlButtonsOnClickListener();
-
-        //display first fragment
-        displayPrompt(getNextPrompt());
     }
 
 
@@ -93,6 +90,7 @@ public class StoryPlaybackActivity extends Activity {
         super.onPause();
     }
 
+
     /**
      * This method sets onClickListeners to the Back and Next Buttons
      */
@@ -104,10 +102,27 @@ public class StoryPlaybackActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+
                 // Play pop sound
                 playPopSoundEffect();
 
-                //TODO make it display the previous prompt
+                //get the previous prompt
+                String prompt = getPrevPrompt();
+
+                //check if there are not more prompts to process
+                if(prompt == null) {
+
+                    //no more prompts to process
+                    //terminate activity and go back to previous activity
+                    finish();
+
+                } else {
+
+                    //display and play prev prompt
+                    displayPrompt(prompt);
+                    speechContainer.speak(prompt);
+                }
+
 
             }
         });
@@ -122,14 +137,41 @@ public class StoryPlaybackActivity extends Activity {
                 // Play pop sound
                 playPopSoundEffect();
 
-                //TODO make it display the next prompt
-
+                //get the next prompt
                 String prompt = getNextPrompt();
-                displayPrompt(prompt);
+
+                //check if there are not more prompts to process
+                if(prompt == null) {
+
+                    //no more prompts to process
+                    //go to EndActivity
+                    startActivity(new Intent(getApplicationContext(), EndActivity.class));
+
+                } else {
+
+                    //display and play next prompt
+                    displayPrompt(prompt);
+                    speechContainer.speak(prompt);
+
+                }
 
             }
         });
 
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == REQUEST_CODE) {
+            Log.i(TAG, "text to speach returnerd with code = " + requestCode);
+
+            // Set onClickListener for the Back and Next buttons
+            setControlButtonsOnClickListener();
+
+            //display first fragment
+            String prompt = getNextPrompt();
+            displayPrompt(prompt);
+            speechContainer.speak(prompt);
+        }
     }
 
     private void playPopSoundEffect(){
@@ -141,23 +183,21 @@ public class StoryPlaybackActivity extends Activity {
     private void displayPrompt(String prompt){
         TextView promptText = findViewById(R.id.prompt_text);
         promptText.setText(prompt);
-        speechContainer.speak(prompt);
     }
 
     private String getNextPrompt(){
-        if(nextPrompt < prompts.length){
-            return prompts[nextPrompt++];
+        if(currPrompt < prompts.length){
+            return prompts[++currPrompt];
         } else {
             return null;
         }
     }
 
     private String getPrevPrompt(){
-        if(nextPrompt > 0){
-            return prompts[--nextPrompt];
+        if(currPrompt > 0){
+           return prompts[--currPrompt];
         } else {
             return null;
         }
     }
-
 }

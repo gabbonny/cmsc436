@@ -5,6 +5,9 @@
     <color name="colorAccent">#ff4081</color>
     <color name="main_background">#7f71ff</color>
     <color name="white_20opacity">#80FFFFFF</color>
+    <color name="blue_20opacity">#803F51B5</color>
+    <color name="green_20opacity">#80b6ffa5</color>
+
 
     <color name="prompt_option1">#b6ffa5</color>
     <color name="adventure_selected">#b6ffa5</color>
