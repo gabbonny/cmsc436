@@ -127,15 +127,16 @@ public class StoryPlaybackActivity extends Activity {
                     speechContainer.speak(prompt);
                 }
 
-
             }
         });
 
         //toggle back button
-        if(currPrompt == 0){
-            backButton.setVisibility(View.INVISIBLE);
+        if(currPrompt <= 0){
+            backButton.setEnabled(false);
+            backButton.setAlpha(0.2F);
         } else {
-            backButton.setVisibility(View.VISIBLE);
+            backButton.setEnabled(true);
+            backButton.setAlpha(1F);
         }
 
         //Set up Next Button
@@ -173,7 +174,7 @@ public class StoryPlaybackActivity extends Activity {
 
 
         //Set up Next Button
-        ImageButton playButton = findViewById(R.id.next_btn);
+        ImageButton playButton = findViewById(R.id.play_btn);
         playButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
