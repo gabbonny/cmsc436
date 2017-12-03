@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gabby\\git_projects\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ta\\values-ta.xml",
+            "outputFile": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ta\\values-ta.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\gabby\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\16051b3c3aceb576c0b6fa22d37ab82c\\res\\values-ta\\values-ta.xml",
+                    "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\70c68569cf688a76d5ea2765e99ba465\\res\\values-ta\\values-ta.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
