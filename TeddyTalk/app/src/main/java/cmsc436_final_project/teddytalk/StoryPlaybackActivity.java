@@ -55,7 +55,11 @@ public class StoryPlaybackActivity extends Activity {
 
         setContentView(R.layout.activity_story_playback);
 
-        speechContainer.initialize(this);
+        try {
+            speechContainer.initialize(this);
+        } catch (RuntimeException e) {
+
+        }
         Intent go = new Intent(this, TextToSpeechContainer.class);
         startActivityForResult(go, REQUEST_CODE);
 
@@ -145,7 +149,9 @@ public class StoryPlaybackActivity extends Activity {
 
                     //no more prompts to process
                     //go to EndActivity
-                    startActivity(new Intent(getApplicationContext(), EndActivity.class));
+                    Intent end = new Intent(getApplicationContext(),EndActivity.class);
+                    end.putExtra("story",getIntent().getExtras().getStringArray(INTENT_DATA));
+                    startActivity(end);
 
                 } else {
 

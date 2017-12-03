@@ -68,6 +68,15 @@ public class MainActivity extends Activity {
                 startActivity(selectGenreIntent);
             }
         });
+
+        ImageView replays = findViewById(R.id.replay);
+        replays.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent saveStories = new Intent(MainActivity.this,SaveActivity.class);
+                startActivity(saveStories);
+            }
+        });
     }
 
     @Override

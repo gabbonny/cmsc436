@@ -13,17 +13,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/speech_bubble_main" />
+        android:src="@drawable/speech_bubble" />
 
 
     <ImageView
         android:id="@+id/stars2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/start_button"
+        android:layout_above="@+id/stars1"
+        android:layout_alignParentEnd="true"
         android:scaleType="fitCenter"
-        android:layout_marginLeft="10dp"
         android:src="@drawable/star_pink_set" />
 
     <ImageView
@@ -54,6 +53,15 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/start_button" />
+        android:src="@drawable/start_button3" />
+
+    <ImageView
+        android:id="@+id/replay"
+        android:layout_width="83dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/stars2"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/replay_icon" />
 
 </RelativeLayout>

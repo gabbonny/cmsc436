@@ -3,87 +3,107 @@
     abi="x86"
     api-level="26"
     build-mode="COLD"
-    density="560dpi"
+    density="420dpi"
     format="10"
-    plugin-version="3.0.0"
-    timestamp="1512277084359"
-    token="8971209061590731295"
+    ir-eligibility="CLASS_ADDED"
+    plugin-version="3.0.1"
+    timestamp="1512323997614"
+    token="-8776165874377435550"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="1017" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="38" />
     <task
         name="verifier"
-        duration="0" />
+        duration="18" />
+
+    <artifact
+        location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1512276058959"
+        timestamp="1512321178387"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1512276994683"
-        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1512277074099"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1512321856643"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512277084359"
-        verifier="COLD_SWAP_REQUESTED" />
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1512323997614"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
 
 </instant-run>

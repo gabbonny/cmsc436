@@ -4,12 +4,17 @@ package cmsc436_final_project.teddytalk;
  * Created by Stefani Moore on 11/25/2017.
  */
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +42,11 @@ public class EndActivity extends AppCompatActivity {
     private TextView rewrite_txt;
 
     private int mCurrRotation = 0;
+
+    private SharedPreferences sharedPref;
+    private SharedPreferences.Editor editor;
+
+    private String[] story;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,18 +102,78 @@ public class EndActivity extends AppCompatActivity {
 
         pop_up_bear.startAnimation(animSlideUp);
 
+        sharedPref = getSharedPreferences("savedStories",MODE_PRIVATE);
+        editor = sharedPref.edit();
+
+        story = getIntent().getExtras().getStringArray("story");
+
     }
 
     public void replay(){
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
         Intent go = new Intent(EndActivity.this,StoryPlaybackActivity.class);
+        go.putExtra("data",story);
         startActivity(go);
 
     }
     public void save(){
         //CALLED IN XML
         //optional save in possible library class stored at files
+
+        // get prompts.xml view
+        LayoutInflater li = LayoutInflater.from(this);
+        View promptsView = li.inflate(R.layout.save_prompt, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        final EditText userInput = (EditText) promptsView
+                .findViewById(R.id.editTextDialogUserInput);
+
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+
+                                // Need to convert string array to string
+                                StringBuilder sb = new StringBuilder();
+                                for (int i = 0; i < story.length; i++) {
+                                    sb.append(story[i]).append(",");
+                                }
+
+                                // Put data into shared pref
+                                editor.putString(userInput.getText().toString(),sb.toString());
+                                editor.commit();
+
+                                // Go to save activity
+                                Intent i = new Intent(EndActivity.this,SaveActivity.class);
+                                startActivity(i);
+
+                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+
+
+
 
 //        Intent go = new Intent(End_main.this,Save_Actvity.class);
 //        startActivity(go);
