@@ -1062,7 +1062,7 @@ int id stars_2 0x7f0800bf
 int id start 0x7f0800c0
 int id start_button 0x7f0800c1
 int id status_bar_latest_event_content 0x7f0800c2
-int id stop_play 0x7f0800c3
+int id stop_btn 0x7f0800c3
 int id submenuarrow 0x7f0800c4
 int id submit_area 0x7f0800c5
 int id tabMode 0x7f0800c6

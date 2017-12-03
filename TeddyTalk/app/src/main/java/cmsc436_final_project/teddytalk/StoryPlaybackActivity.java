@@ -131,6 +131,13 @@ public class StoryPlaybackActivity extends Activity {
             }
         });
 
+        //toggle back button
+        if(currPrompt == 0){
+            backButton.setVisibility(View.INVISIBLE);
+        } else {
+            backButton.setVisibility(View.VISIBLE);
+        }
+
         //Set up Next Button
         ImageButton nextButton = findViewById(R.id.next_btn);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +171,43 @@ public class StoryPlaybackActivity extends Activity {
             }
         });
 
+
+        //Set up Next Button
+        ImageButton playButton = findViewById(R.id.next_btn);
+        playButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Play pop sound
+                playPopSoundEffect();
+
+                //get the next prompt
+                String prompt = getCurrPrompt();
+
+                //check if there are not more prompts to process
+                if(prompt != null) {
+
+                    //read prompt
+                    speechContainer.speak(prompt);
+
+                }
+            }
+        });
+
+
+        //Set up Next Button
+        ImageButton stopButton = findViewById(R.id.stop_btn);
+        stopButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Play pop sound
+                playPopSoundEffect();
+                speechContainer.stop();
+            }
+        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -191,6 +235,13 @@ public class StoryPlaybackActivity extends Activity {
         promptText.setText(prompt);
     }
 
+    private String getCurrPrompt(){
+        if(currPrompt >= 0 && currPrompt < prompts.length){
+            return prompts[currPrompt];
+        } else {
+            return null;
+        }
+    }
     private String getNextPrompt(){
         if(currPrompt < prompts.length - 1){
             return prompts[++currPrompt];

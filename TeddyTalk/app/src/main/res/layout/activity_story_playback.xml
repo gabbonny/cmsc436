@@ -87,7 +87,7 @@
 
 
         <ImageButton
-            android:id="@+id/stop_play"
+            android:id="@+id/stop_btn"
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="80dp"
             android:layout_height="80dp"

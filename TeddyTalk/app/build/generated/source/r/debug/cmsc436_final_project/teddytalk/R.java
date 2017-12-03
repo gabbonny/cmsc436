@@ -3764,7 +3764,7 @@ public final class R {
     public static final int start=0x7f0800c0;
     public static final int start_button=0x7f0800c1;
     public static final int status_bar_latest_event_content=0x7f0800c2;
-    public static final int stop_play=0x7f0800c3;
+    public static final int stop_btn=0x7f0800c3;
     public static final int submenuarrow=0x7f0800c4;
     public static final int submit_area=0x7f0800c5;
     public static final int tabMode=0x7f0800c6;
