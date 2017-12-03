@@ -1,0 +1,195 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3f7f5cc57b524f084fcfb955a0f06a08\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:17:1-30:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+	package
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:5:5-55:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3f7f5cc57b524f084fcfb955a0f06a08\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3f7f5cc57b524f084fcfb955a0f06a08\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:11:9-40
+activity#cmsc436_final_project.teddytalk.MainActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:12:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:16:27-74
+activity#cmsc436_final_project.teddytalk.SelectGenreActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:19:9-25:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:19:19-54
+activity#cmsc436_final_project.teddytalk.StoryPromptActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:26:9-32:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:26:19-54
+activity#cmsc436_final_project.teddytalk.EndActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:33:9-39:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:33:19-46
+activity#cmsc436_final_project.teddytalk.TextToSpeechContainer
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:40:9-46:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:40:19-56
+activity#cmsc436_final_project.teddytalk.StoryPlaybackActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:9-53:20
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:19-56
+activity#cmsc436_final_project.teddytalk.SaveActivity
+ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:54:9-59
+	android:name
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:54:19-47
+uses-sdk
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3f7f5cc57b524f084fcfb955a0f06a08\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3f7f5cc57b524f084fcfb955a0f06a08\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:20:5-22:41
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		ADDED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+		INJECTED from E:\UMD Stuff\Fall2017\CMSC436\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\36c81ac100edf67c459a7e11eca1b606\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\420f08b4ced44b61b4e0dc80d596838a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8d7b590a76ebf5007fba1159bbb8381a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\31ca07cd24b7fb3f3c00d497774852f4\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\ef66382262c4b06b428b149c5386ed26\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\8c3a4ecf564131a65945abbcda378016\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\aa66918a3bc6ff60456db085b4f6547d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\425b0362dae62f5821430fbd1c298b60\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\c40c69d2d3f285a245070b99448996bb\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\7d83e9648f411d0fea125be01a9d746f\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8cd888b519c402613c44dc4f427d7360\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\376714ba2a7820d2cec53f56684d6bee\AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marc\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e86ed5ed9c7445dcd1f5052792ee5f23\AndroidManifest.xml:26:13-58

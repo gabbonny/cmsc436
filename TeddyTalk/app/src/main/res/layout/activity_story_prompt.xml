@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/control_buttons"
+    android:id="@+id/activity_story_prompt_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/fab_margin"
     android:visibility="visible"
-    android:background="@drawable/tower_bg"
+    android:background="@drawable/fantasy_story_bg_2"
     tools:layout_editor_absoluteY="81dp">
 
         <FrameLayout
@@ -22,6 +21,7 @@
             android:id="@+id/control_btns_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             android:visibility="visible">

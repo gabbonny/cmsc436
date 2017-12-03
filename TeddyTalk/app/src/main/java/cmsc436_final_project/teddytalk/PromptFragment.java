@@ -7,8 +7,8 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+
+import android.support.constraint.ConstraintLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +44,7 @@ public class PromptFragment extends Fragment{
     // Audio volume
     private float mStreamVolume;
 
-    private RelativeLayout mOptionsContainer;
+    private ConstraintLayout mOptionsContainer;
 
     // Variables used to keep track of the content of the fragment
     private Prompt mPrompt;
@@ -77,27 +77,15 @@ public class PromptFragment extends Fragment{
 
         // Set onClickListener for the fill in option
         final EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
-        fillInOption.addTextChangedListener(new TextWatcher() {
 
+        fillInOption.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                //do nothing
-            }
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.i(TAG, "onFocusChange");
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //do nothing
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                Log.i(TAG, "afterTextChanged");
-
-                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(s.toString())) {
+                if(mPrompt.getUserChoice() == null || !mPrompt.getUserChoice().equals(fillInOption.getText().toString())) {
                     updateFillInOption(fillInOption.getText().toString().trim());
                 }
-
             }
         });
 
@@ -107,7 +95,9 @@ public class PromptFragment extends Fragment{
         for(int i = 0; i < mOptionsContainer.getChildCount(); i++) {
             Button mView = (Button) mOptionsContainer.getChildAt(i);
             mView.setText(options[i]);
+            mView.setAlpha(1);
             setOptionOnClickListener(mView);
+
         }
 
 
@@ -231,6 +221,8 @@ public class PromptFragment extends Fragment{
 
                 //replace fill in blank with the selected option
                 updateFillInOption(button.getText().toString());
+
+                updateOptionsColor(button);
             }
         });
     }
@@ -281,7 +273,7 @@ public class PromptFragment extends Fragment{
             EditText fillInOption = getActivity().findViewById(R.id.fillInOption);
 
             // grab the color for when the view is filled in
-            int color = getResources().getColor(R.color.filledInOption);
+            int color = getResources().getColor(R.color.filledInOption_bg);
 
             // Save the user option
             mPrompt.setUserChoice(option);
@@ -291,7 +283,7 @@ public class PromptFragment extends Fragment{
 
             //fill int the blank with the input
             fillInOption.setText(option);
-            fillInOption.setTextColor(getResources().getColor(R.color.colorAccent));
+            fillInOption.setTextColor(getResources().getColor(R.color.filledInOption_selected));
 
         }
 
@@ -308,6 +300,17 @@ public class PromptFragment extends Fragment{
         fillInOption.setTextColor(Color.GRAY);
     }
 
+    private void updateOptionsColor(View button){
+
+        button.setAlpha(1);
+        for(int i = 0; i < mOptionsContainer.getChildCount(); i++){
+           View child = mOptionsContainer.getChildAt(i);
+
+           if(child.getId() != button.getId()){
+               child.setAlpha(.5F);
+           }
+       }
+    }
 
     /**
      * This method start the bouncing animation

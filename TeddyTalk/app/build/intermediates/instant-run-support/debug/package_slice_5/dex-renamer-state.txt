@@ -1,0 +1,4 @@
+#Sun Dec 03 12:13:13 EST 2017
+base.0=E\:\\UMD Stuff\\Fall2017\\CMSC436\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,92 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEE8C8">
+    android:background="@drawable/generic_story_bg_1"
+    android:id="@+id/select_story">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/nextButton"
-        android:layout_marginBottom="42dp"
-        android:layout_toStartOf="@+id/fantasy_button"
-        android:background="#47525E"
-        android:text="Scary Story"
-        android:textColor="#FFFBFA" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/button"
-        android:layout_alignBottom="@+id/button"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:background="#47525E"
-        android:textColor="#FFFBFA"
-        android:text="Funny Story" />
-
-    <ImageButton
-        android:id="@+id/nextButton"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_alignEnd="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:background="#0000"
-        android:scaleType="fitXY"
-        android:src="@drawable/next" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/title_background"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button2"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button"
-        android:layout_marginTop="29dp"
-        android:textAlignment="center"
-        android:textColor="#F35692"
-        android:textSize="50dp"
-        android:fontFamily="cursive"
-        android:text="Pick your Story!!" />
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:background="@color/select_genre_title"
+        android:visibility="visible">
 
-    <Button
-        android:id="@+id/hero_button"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/fantasy_button"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="38dp"
-        android:background="#FF9052"
-        android:textSize="18dp"
-        android:fontFamily="cursive"
-        android:text="Hero Story" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fantasy_button"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:text="Pick your Story!!"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/love_button"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/hero_button"
-        android:layout_alignBottom="@+id/hero_button"
-        android:layout_alignEnd="@+id/textView"
-        android:background="#FF9052"
-        android:textSize="18dp"
-        android:fontFamily="cursive"
-        android:text="Love Story" />
-
-    <Button
-        android:id="@+id/fantasy_button"
-        android:layout_width="110dp"
-        android:layout_height="55dp"
-        android:layout_centerHorizontal="true"
+    <RelativeLayout
+        android:id="@+id/options_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/title_background"
+        android:layout_marginTop="50dp"
         android:layout_centerVertical="true"
-        android:background="#FF9052"
-        android:fontFamily="cursive"
-        android:textSize="18dp"
-        android:text="Fantasy\nStory" />
+        android:layout_marginBottom="80dp">
 
+        <Button
+            android:id="@+id/adventure_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/adventure_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="30dp"
+            android:rotation="-15"
+            android:text="ADVENTURE"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/love_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/adventure_button"
+            android:layout_alignParentEnd="true"
+            android:background="@color/love_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="15"
+            android:layout_marginRight="30dp"
+            android:text="LOVE "
+            android:minWidth="150dp"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/fantasy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/adventure_button"
+            android:layout_below="@+id/adventure_button"
+            android:layout_marginTop="50dp"
+            android:background="@color/fantasy_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="5"
+            android:text="FANTASY"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/funny_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fantasy_button"
+            android:layout_alignBottom="@+id/fantasy_button"
+            android:layout_alignStart="@+id/love_button"
+            android:background="@color/funny_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="-5"
+            android:text="FUNNY"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/control_btns_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/fab_margin"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitEnd"
+            android:src="@drawable/next_button"
+
+            android:visibility="visible" />
+    </LinearLayout>
 </RelativeLayout>

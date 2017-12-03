@@ -1,24 +1,25 @@
 package cmsc436_final_project.teddytalk;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
-import android.media.Image;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
 
+import Utils.MyBounceInterpolator;
 
+public class MainActivity extends Activity {
 
-public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     // Sound variables
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ColorDrawable colorDraw = new ColorDrawable(Color.parseColor("#882472"));//#20a780
-        getSupportActionBar().setBackgroundDrawable(colorDraw);
+//        getSupportActionBar().setBackgroundDrawable(colorDraw);
 
         ImageView stars1 = findViewById(R.id.stars1);
         ImageView stars2 = findViewById(R.id.stars2);
@@ -52,17 +53,28 @@ public class MainActivity extends AppCompatActivity {
         stars1.startAnimation(anim);
         stars2.startAnimation(anim);
 
-        ImageButton implicitActivationButton = findViewById(R.id.start_button);
+        final ImageButton implicitActivationButton = findViewById(R.id.start_button);
         implicitActivationButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+
+                startOnTapAnimation(implicitActivationButton);
 
                 // start genre activity
                 Intent selectGenreIntent = new Intent(MainActivity.this, SelectGenreActivity.class);
                 mSoundPool.play(mSoundID, mStreamVolume,
                         mStreamVolume, 1, 0, 1.0f);
                 startActivity(selectGenreIntent);
+            }
+        });
+
+        ImageView replays = findViewById(R.id.replay);
+        replays.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent saveStories = new Intent(MainActivity.this,SaveActivity.class);
+                startActivity(saveStories);
             }
         });
     }
@@ -91,4 +103,22 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
+
+
+    /**
+     * This method start the bouncing animation
+     * @param button The button to apply the animation
+     */
+    private void startOnTapAnimation(View button) {
+
+        Log.i(TAG, "Tapped Option Button " + button.getId());
+
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator);
+
+        button.startAnimation(myAnim);
+    }
 }

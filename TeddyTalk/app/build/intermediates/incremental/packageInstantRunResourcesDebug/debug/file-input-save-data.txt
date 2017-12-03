@@ -1,0 +1,19 @@
+#Internal package file, do not edit.
+#Sun Dec 03 13:00:00 EST 2017
+1.base=E\:\\UMD Stuff\\Fall2017\\CMSC436\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\assets\\debug
+2.path=funny_story.txt
+0.baseType=DIRECTORY
+3.baseType=DIRECTORY
+2.base=E\:\\UMD Stuff\\Fall2017\\CMSC436\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\assets\\debug
+3.set=ASSET
+2.set=ASSET
+1.baseType=DIRECTORY
+3.path=love_story.txt
+count=4
+1.set=ASSET
+0.path=fantasy_story.txt
+3.base=E\:\\UMD Stuff\\Fall2017\\CMSC436\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\assets\\debug
+0.set=ASSET
+0.base=E\:\\UMD Stuff\\Fall2017\\CMSC436\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\assets\\debug
+2.baseType=DIRECTORY
+1.path=adventure_story.txt

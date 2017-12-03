@@ -12,11 +12,12 @@ import android.speech.tts.TextToSpeech.OnInitListener;
 import android.content.Intent;
 import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Locale;
 
 public class TextToSpeechContainer extends Activity implements OnInitListener{
+    private static final String TAG = "TextToSpeechContainer";
+
     private static boolean initialized = false;
     private static TextToSpeech TTS;
     private static Intent onInitializationIntent;
@@ -41,19 +42,25 @@ public class TextToSpeechContainer extends Activity implements OnInitListener{
         }
     }
 
+
     public static boolean speak(String words) {
-        Log.i("TTS Module","inSpeakFunction");
+        Log.i(TAG,"inSpeakFunction");
+
         if (TTS != null) {
-            Log.i("TTS Module","Speaking the words");
+
+            Log.i(TAG,"Speaking the words");
             TTS.speak(words, TextToSpeech.QUEUE_FLUSH, null);
             return true;
         }
+
+        Log.i(TAG,"TSS no initialized");
+
         return false;
     }
 
     public static void initialize(Context context) {
         if(!initialized) {
-            Log.i("TTS Module", "Initializing TTS Module");
+            Log.i(TAG, "Initializing TTS Module");
             initialized = true;
             appliedContext = context;
         }
@@ -68,9 +75,11 @@ public class TextToSpeechContainer extends Activity implements OnInitListener{
         initialized = true;
 
         if (requestCode == DATA_CODE) {
+
+
             if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
-                TTS = new TextToSpeech(appliedContext, this);
-                Log.i("TTS Module", "TTS pointer: " + TTS);
+                TTS = new TextToSpeech(getApplicationContext(), this);
+                Log.i(TAG, "TTS pointer: " + TTS);
             }
             else {
                 Intent installTTSIntent = new Intent();
@@ -79,7 +88,7 @@ public class TextToSpeechContainer extends Activity implements OnInitListener{
             }
         }
 
-        Log.i("TTS Module", "Activity completed with status code: " + resultCode);
+        Log.i(TAG, "Activity completed with status code: " + resultCode);
     }
 
     @Override

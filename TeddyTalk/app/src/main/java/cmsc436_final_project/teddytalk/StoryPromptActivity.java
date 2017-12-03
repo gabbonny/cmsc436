@@ -1,15 +1,13 @@
 package cmsc436_final_project.teddytalk;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 import Utils.*;
 
@@ -22,23 +20,12 @@ import android.widget.Toast;
  * Created by Stefani Moore on 11/12/2017.
  */
 
-public class StoryPromptActivity extends Activity implements OnDataPass{
+public class StoryPromptActivity extends Activity {
 
     private final String TAG = "storyPromptActivity";
-    private final String BACK_STACK_ROOT_TAG = "root_fragment";
+    public final static String INTENT_DATA = "data";
 
-    //variables used for reading/parsing story from file
-    private final String PROMPT_FRAG_SEPARATOR = "|";
-    private final String PROMPT_FILLIN_TAG = "<F>";
-    private final String PROMPT_INPUT_OPTIONS_SEPARATOR = ",";
-
-    //used to read file from assets
-    private BufferedReader promptReader;
-
-    // The story choosen by the user
-    private Story story;
-
-    // Variables for sound functionality
+    // ----- Variables for sound functionality
 
     // AudioManager
     private AudioManager mAudioManager;
@@ -50,9 +37,12 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
     // Audio volume
     private float mStreamVolume;
 
-    //Fragments
+    // ---- Variables for managing Fragments
     private FragmentManager mFragmentManager;
     private PromptFragment mPromptFragment;
+
+    // ---- Holds the story chosen by the user
+    private Story story;
 
     public void onCreate(Bundle savedInstanceState){
 
@@ -60,27 +50,25 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
 
         setContentView(R.layout.activity_story_prompt);
 
-        // Get reference to fragement manager
+        // Get reference to fragment manager
         mFragmentManager = getFragmentManager();
 
-        // TODO get story type from previous activity (should be as an extra from bundle intent)
-        String fileName = "fantasy_story.txt";
+        //get story filename from previous activity
+        String fileName = getIntent().getExtras().getString(INTENT_DATA);
 
-        //create the new story
+        //create the new story based on user choice
         try {
-            story = new Story(this.getAssets().open(fileName));
+            story = new Story(fileName, this.getAssets().open(fileName));
             Log.i(TAG, story.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         // Set onClickListener for the Back and Next buttons
         setControlButtonsOnClickListener();
 
         //display first fragment
         setupFragment(story.getNextPrompt());
-
     }
 
 
@@ -114,9 +102,8 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
      */
     private void setControlButtonsOnClickListener(){
 
+        //Set up Back Button
         ImageButton backButton = findViewById(R.id.back_btn);
-        final ImageButton nextButton = findViewById(R.id.next_btn);
-
         backButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -124,7 +111,6 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
                 // Play pop sound
                 playPopSoundEffect();
 
-                //todo ADD BACK FUNCTIONALITY
                 //get the previous prompt
                 Prompt prevPrompt = story.getPreviousPrompt();
 
@@ -146,44 +132,66 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
             }
         });
 
+        //Set up Next Button
+        ImageButton nextButton = findViewById(R.id.next_btn);
         nextButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+
                 // Play pop sound
                 playPopSoundEffect();
 
                 //check if current prompt has been completed
                 if(mPromptFragment.isCompleted()){
 
-                    Log.i(TAG, "Next button pressed. State: current prompt COMPLETED");
+                    //Prompt compelted
+                    Log.i(TAG, "Next Prompt pressed. State: Current Prompt COMPLETED");
 
                     Prompt nextPrompt = story.getNextPrompt();
 
-                    //TODO check if last prompt (returns null ?)
+                    //check if nextPrompt is null.
                     if(nextPrompt == null){
-                        //todo move to the next activity
+
+                        //Story is completed. Send story to the next activity
+                        //move to the next activity
+                        Log.i(TAG, "Story Completed moving to the next activity");
+
+                        //get the finished story
+                        String[] finishedStory = story.getFinishedStory();
+
+                        //Check if story is actually completed
+                        if(finishedStory != null){
+                            Intent storyPlaybackActivity = new Intent(getApplicationContext(), StoryPlaybackActivity.class);
+                            storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
+                            startActivity(storyPlaybackActivity);
+                        }
+
                     } else {
 
+                        //Story is no complete yet. Load the next prompt in the fragment
                         Log.i(TAG, "Loading new fragment. New prompt: " + nextPrompt.toString());
-                        //Create the new fragement
+
+                        // set the new fragment
                         mPromptFragment.setPrompt(nextPrompt);
+                        // load the new prompt
                         mPromptFragment.setPromptContent();
 
                     }
 
                 } else {
 
-                    Log.i(TAG, "Next button pressed. State: current prompt NOT COMPLETED");
+                    //Prompt has not been completed yet
+                    Log.i(TAG, "Next Prompt pressed. State: Current Prompt NOT COMPLETED");
 
-                    Toast.makeText(getApplicationContext(),"You must complete this prompt to continue.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Complete this prompt to continue!", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
     }
 
-    public void setupFragment(Prompt prompt){
+    private void setupFragment(Prompt prompt){
 
 
         if (null == mFragmentManager.findFragmentById(R.id.prompt_fragment_container)) {
@@ -205,11 +213,6 @@ public class StoryPromptActivity extends Activity implements OnDataPass{
     private void playPopSoundEffect(){
         mSoundPool.play(mPopSoundID, mStreamVolume,
                 mStreamVolume, 1, 0, 1.0f);
-    }
-
-    @Override
-    public void onDataPass(String data, int promptId) {
-        Log.d("LOG","hello " + data);
     }
 
 }
