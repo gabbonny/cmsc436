@@ -154,7 +154,7 @@ public class StoryPromptActivity extends Activity {
                     if(nextPrompt == null){
 
                         //Story is completed. Send story to the next activity
-                        //TODO move to the next activity
+                        //move to the next activity
                         Log.i(TAG, "Story Completed moving to the next activity");
 
                         //get the finished story

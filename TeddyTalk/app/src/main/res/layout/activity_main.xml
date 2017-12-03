@@ -2,59 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fantasy_story_bg_3"
+    android:background="@drawable/fantasy_story_bg_5"
     android:padding="20dp">
 
 
     <ImageView
-        android:id="@+id/speach_bubble"
-        android:layout_width="wrap_content"
+        android:id="@+id/speech_bubble_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bear"
-        android:layout_alignStart="@+id/bear"
-        android:adjustViewBounds="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/speech_bubble" />
+        android:src="@drawable/speech_bubble_main" />
 
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/speach_bubble"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="cursive"
-        android:text="Teddy Talks"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="50sp"
-        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/stars2"
-        android:layout_width="94dp"
-        android:layout_height="94dp"
-        android:layout_above="@+id/stars1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/start_button"
         android:scaleType="fitCenter"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/star_pink_set" />
 
     <ImageView
         android:id="@+id/stars1"
-        android:layout_width="94dp"
-        android:layout_height="94dp"
-        android:layout_above="@+id/start_button"
-        android:layout_toStartOf="@+id/start_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/start_button"
         android:scaleType="fitCenter"
+        android:layout_marginRight="10dp"
         android:src="@drawable/star_pink_set" />
 
     <ImageView
         android:id="@+id/bear"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/speech_bubble_main"
         android:layout_above="@+id/start_button"
-        android:layout_alignStart="@+id/stars1"
         android:scaleType="fitCenter"
         android:src="@drawable/main_bear" />
 
@@ -67,6 +54,6 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/start_button3" />
+        android:src="@drawable/start_button" />
 
 </RelativeLayout>

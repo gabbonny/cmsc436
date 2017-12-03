@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/generic_story_bg_1"
     android:id="@+id/select_story">
@@ -8,102 +9,102 @@
     <LinearLayout
         android:id="@+id/title_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
+        android:background="@color/select_genre_title"
         android:visibility="visible">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:background="@color/title_bg_color"
-            android:padding="10dp"
-            android:fontFamily="cursive"
+            android:layout_above="@+id/fantasy_button"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
             android:text="Pick your Story!!"
             android:textAlignment="center"
-            android:textColor="@color/pick_story_color"
-
-            android:textSize="50dp"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/story_options_container"
+    <RelativeLayout
+        android:id="@+id/options_wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="80dp" >
+        android:layout_below="@id/title_background"
+        android:layout_marginTop="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="80dp">
 
-        <RelativeLayout
-            android:id="@+id/options_wrapper"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true">
+        <Button
+            android:id="@+id/adventure_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/adventure_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="30dp"
+            android:rotation="-15"
+            android:text="ADVENTURE"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/adventure_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="23dp"
-                android:background="@color/prompt_option1"
-                android:fontFamily="sans-serif-smallcaps"
-                android:padding="15dp"
-                android:rotation="-15"
-                android:text="ADVENTURE"
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/love_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/adventure_button"
+            android:layout_alignParentEnd="true"
+            android:background="@color/love_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="15"
+            android:layout_marginRight="30dp"
+            android:text="LOVE "
+            android:minWidth="150dp"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/love_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/adventure_button"
-                android:layout_alignBottom="@+id/adventure_button"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="28dp"
-                android:background="@color/prompt_option2"
-                android:fontFamily="sans-serif-smallcaps"
-                android:padding="15dp"
-                android:rotation="15"
-                android:text="LOVE "
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/fantasy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/adventure_button"
+            android:layout_below="@+id/adventure_button"
+            android:layout_marginTop="50dp"
+            android:background="@color/fantasy_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="5"
+            android:text="FANTASY"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/fantasy_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/adventure_button"
-                android:layout_below="@+id/adventure_button"
-                android:layout_marginTop="40dp"
-                android:background="@color/prompt_option3"
-                android:fontFamily="sans-serif-smallcaps"
-                android:padding="15dp"
-                android:rotation="5"
-                android:text="FANTASY"
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/funny_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fantasy_button"
+            android:layout_alignBottom="@+id/fantasy_button"
+            android:layout_alignStart="@+id/love_button"
+            android:background="@color/funny_button"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="15dp"
+            android:rotation="-5"
+            android:text="FUNNY"
+            android:minWidth="150dp"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/funny_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/fantasy_button"
-                android:layout_alignBottom="@+id/fantasy_button"
-                android:layout_alignStart="@+id/love_button"
-                android:background="@color/prompt_option4"
-                android:fontFamily="sans-serif-smallcaps"
-                android:padding="15dp"
-                android:rotation="-5"
-                android:text="FUNNY"
-                android:textSize="30sp" />
-
-        </RelativeLayout>
-
-    </FrameLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/control_btns_wrapper"
@@ -127,6 +128,7 @@
             android:contentDescription="@string/next_btn_descrip"
             android:scaleType="fitEnd"
             android:src="@drawable/next_button"
+
             android:visibility="visible" />
     </LinearLayout>
 </RelativeLayout>

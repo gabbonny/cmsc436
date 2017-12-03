@@ -6,14 +6,20 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
 
+import Utils.MyBounceInterpolator;
+
 public class MainActivity extends Activity {
+
+    private static final String TAG = "MainActivity";
 
     // Sound variables
 
@@ -47,11 +53,13 @@ public class MainActivity extends Activity {
         stars1.startAnimation(anim);
         stars2.startAnimation(anim);
 
-        ImageButton implicitActivationButton = findViewById(R.id.start_button);
+        final ImageButton implicitActivationButton = findViewById(R.id.start_button);
         implicitActivationButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+
+                startOnTapAnimation(implicitActivationButton);
 
                 // start genre activity
                 Intent selectGenreIntent = new Intent(MainActivity.this, SelectGenreActivity.class);
@@ -86,4 +94,22 @@ public class MainActivity extends Activity {
         super.onPause();
     }
 
+
+
+    /**
+     * This method start the bouncing animation
+     * @param button The button to apply the animation
+     */
+    private void startOnTapAnimation(View button) {
+
+        Log.i(TAG, "Tapped Option Button " + button.getId());
+
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator);
+
+        button.startAnimation(myAnim);
+    }
 }

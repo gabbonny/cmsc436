@@ -73,22 +73,18 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
 
                 // Make this button look selected
                 Button adv =(Button) buttonList.get("adventure");
-                adv.setBackgroundColor(getResources().getColor(R.color.adventure_selected));
                 adv.setAlpha(1f);
                 chosen = Story.STORY_GENRE_ADVENTURE;
 
                 // Make the others look deselected
                 Button love = (Button) buttonList.get("love");
-                love.setBackgroundColor(getResources().getColor(R.color.deselected));
                 love.setAlpha(0.5f);
 
-                Button fan = (Button) buttonList.get("fantasy");
-                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fan.setAlpha(0.5f);
+                Button fantasy = (Button) buttonList.get("fantasy");
+                fantasy.setAlpha(0.5f);
 
-                Button fun = (Button) buttonList.get("funny");
-                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fun.setAlpha(0.5f);
+                Button funny = (Button) buttonList.get("funny");
+                funny.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);
@@ -103,21 +99,17 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
                 Log.i(TAG, "Love chosen");
 
                 love =(Button) buttonList.get("love");
-                love.setBackgroundColor(getResources().getColor(R.color.love_selected));
                 love.setAlpha(1f);
                 chosen = Story.STORY_LOVE;
 
                 adv = (Button) buttonList.get("adventure");
-                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
                 adv.setAlpha(0.5f);
 
-                fan = (Button) buttonList.get("fantasy");
-                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fan.setAlpha(0.5f);
+                fantasy = (Button) buttonList.get("fantasy");
+                fantasy.setAlpha(0.5f);
 
-                fun = (Button) buttonList.get("funny");
-                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fun.setAlpha(0.5f);
+                funny = (Button) buttonList.get("funny");
+                funny.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);
@@ -130,22 +122,18 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
             case R.id.fantasy_button:
                 Log.i(TAG, "Fantasy chosen");
 
-                fan =(Button) buttonList.get("fantasy");
-                fan.setBackgroundColor(getResources().getColor(R.color.fantasy_selected));
-                fan.setAlpha(1f);
+                fantasy =(Button) buttonList.get("fantasy");
+                fantasy.setAlpha(1f);
                 chosen = Story.STORY_GENRE_FANTASY;
 
                 love = (Button) buttonList.get("love");
-                love.setBackgroundColor(getResources().getColor(R.color.deselected));
                 love.setAlpha(0.5f);
 
                 adv = (Button) buttonList.get("adventure");
-                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
                 adv.setAlpha(0.5f);
 
-                fun = (Button) buttonList.get("funny");
-                fun.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fun.setAlpha(0.5f);
+                funny = (Button) buttonList.get("funny");
+                funny.setAlpha(0.5f);
                 // start the bounce animation
                 startOnTapAnimation(v);
 
@@ -157,22 +145,18 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
             case R.id.funny_button:
                 Log.i(TAG, "Funny chosen");
 
-                fun =(Button) buttonList.get("funny");
-                fun.setBackgroundColor(getResources().getColor(R.color.funny_selected));
-                fun.setAlpha(1f);
+                funny =(Button) buttonList.get("funny");
+                funny.setAlpha(1f);
                 chosen = Story.STORY_GENRE_FUNNY;
 
                 adv = (Button) buttonList.get("adventure");
-                adv.setBackgroundColor(getResources().getColor(R.color.deselected));
                 adv.setAlpha(0.5f);
 
                 love = (Button) buttonList.get("love");
-                love.setBackgroundColor(getResources().getColor(R.color.deselected));
                 love.setAlpha(0.5f);
 
-                fan =(Button) buttonList.get("fantasy");
-                fan.setBackgroundColor(getResources().getColor(R.color.deselected));
-                fan.setAlpha(0.5f);
+                fantasy =(Button) buttonList.get("fantasy");
+                fantasy.setAlpha(0.5f);
 
                 // start the bounce animation
                 startOnTapAnimation(v);

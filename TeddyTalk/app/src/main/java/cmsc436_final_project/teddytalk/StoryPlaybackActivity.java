@@ -186,7 +186,7 @@ public class StoryPlaybackActivity extends Activity {
     }
 
     private String getNextPrompt(){
-        if(currPrompt < prompts.length){
+        if(currPrompt < prompts.length - 1){
             return prompts[++currPrompt];
         } else {
             return null;

@@ -31,15 +31,15 @@ public class TextToSpeechContainer extends Activity implements OnInitListener{
         super.onCreate(savedInstanceState);
         onInitializationIntent = new Intent();
 
-//        if(initialized) {
+        if(initialized) {
             Intent checkTTSIntent = new Intent();
             checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
             startActivityForResult(checkTTSIntent, DATA_CODE);
-//        }
-//        else {
-//            Log.e("TTS Module", "Container was not initialized");
-//            finish();
-//        }
+        }
+        else {
+            Log.e("TTS Module", "Container was not initialized");
+            finish();
+        }
     }
 
 

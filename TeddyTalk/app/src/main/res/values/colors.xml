@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#1c2971</color>
     <color name="colorPrimaryDark">#cde6f6</color>
     <color name="colorAccent">#ff4081</color>
     <color name="main_background">#7f71ff</color>
     <color name="white_20opacity">#80FFFFFF</color>
+    <color name="select_genre_title">#104854</color>
     <color name="blue_20opacity">#803F51B5</color>
-    <color name="green_20opacity">#80b6ffa5</color>
+    <color name="green_20opacity">#3bccff90</color>
 
 
     <color name="prompt_option1">#b6ffa5</color>
-    <color name="adventure_selected">#b6ffa5</color>
+    <color name="adventure_button">#c5d842</color>
 
     <color name="prompt_option2">#f0ffb8</color>
-    <color name="love_selected">#f0ffb8</color>
+    <color name="love_button">#f9b963</color>
 
-    <color name="prompt_option3">#ff5f80</color>
-    <color name="fantasy_selected">#ff5f80</color>
+    <color name="prompt_option3">#ee5992</color>
+    <color name="fantasy_button">#d41d56</color>
 
     <color name="prompt_option4">#72c5d6</color>
-    <color name="funny_selected">#72c5d6</color>
+    <color name="funny_button">#65b9d8</color>
 
-    <color name="filledInOption">#d7fff6</color>
+    <color name="filledInOption_bg">#ee5992</color>
+    <color name="filledInOption_selected">#ffffff</color>
     <color name="playback_control">#7fffffff</color>
 
     <color name="deselected">#59b2c5f7</color>
 
     <color name="title_bg_color">#67ffffff</color>
-    <color name="pick_story_color">#0c5e0a</color>
+    <color name="pick_story_color">#414040</color>
 
 
 </resources>
