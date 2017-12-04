@@ -43,8 +43,7 @@
         android:layout_marginBottom="110dp"
         android:layout_marginLeft="20dp"
         android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/talking_bear" />
+        android:scaleType="fitXY" />
 
     <LinearLayout
         android:id="@+id/control_btns_wrapper"

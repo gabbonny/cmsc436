@@ -23,6 +23,7 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
     private final String TAG = "SelectGenreActivity";
     private HashMap buttonList;
     private String chosen = "";
+    private int bear_outfit;
 
     // -------------------  Sound variables ---------------------
 
@@ -35,10 +36,14 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
     // Audio volume
     private float mStreamVolume;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_genre);
+
+        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
 
         buttonList = new HashMap();
 
@@ -182,6 +187,7 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
 
                     Intent storyPromptIntent = new Intent(this, StoryPromptActivity.class);
                     storyPromptIntent.putExtra(StoryPromptActivity.INTENT_DATA, chosen);
+                    storyPromptIntent.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
                     startActivity(storyPromptIntent);
 
                 } else {

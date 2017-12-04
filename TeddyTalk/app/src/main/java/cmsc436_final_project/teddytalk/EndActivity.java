@@ -46,12 +46,15 @@ public class EndActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
 
+    private int bear_outfit;
     private String[] story;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_main);
+
+        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
 
         end = (TextView) findViewById(R.id.end_txt);
         replay_txt = (TextView) findViewById(R.id.textView);
@@ -105,7 +108,7 @@ public class EndActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("savedStories",MODE_PRIVATE);
         editor = sharedPref.edit();
 
-        story = getIntent().getExtras().getStringArray("story");
+        story = getIntent().getExtras().getStringArray(StoryPlaybackActivity.INTENT_DATA);
 
     }
 
@@ -113,7 +116,7 @@ public class EndActivity extends AppCompatActivity {
         //CALLED IN XML
         //sends the user back to the Speech_To_Text activity to be read back the story
         Intent go = new Intent(EndActivity.this,StoryPlaybackActivity.class);
-        go.putExtra("data",story);
+        go.putExtra(StoryPlaybackActivity.INTENT_DATA, story);
         startActivity(go);
 
     }
@@ -145,7 +148,7 @@ public class EndActivity extends AppCompatActivity {
                                 // Need to convert string array to string
                                 StringBuilder sb = new StringBuilder();
                                 for (int i = 0; i < story.length; i++) {
-                                    sb.append(story[i]).append(",");
+                                    sb.append(story[i]).append("_");
                                 }
 
                                 // Put data into shared pref
@@ -171,18 +174,12 @@ public class EndActivity extends AppCompatActivity {
         // show it
         alertDialog.show();
 
-
-
-
-
-//        Intent go = new Intent(End_main.this,Save_Actvity.class);
-//        startActivity(go);
-
     }
     public void rewrite(){
         //CALLED IN XML
         //Goes back to rewrite story, pick a genre and do prompt activities again
         Intent go = new Intent(EndActivity.this,SelectGenreActivity.class);
+        go.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
         startActivity(go);
     }
 }

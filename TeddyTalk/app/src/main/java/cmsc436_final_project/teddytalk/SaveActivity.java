@@ -63,7 +63,7 @@ public class SaveActivity extends AppCompatActivity {
                 if (which == 0) {
                     Intent replay = new Intent(SaveActivity.this, StoryPlaybackActivity.class);
                     String story = (String)storyMap.get(adapter.getItem(pos));
-                    replay.putExtra(INTENT_DATA,story.split(","));
+                    replay.putExtra(INTENT_DATA,story.split("_"));
                     startActivity(replay);
                 }
                 // When user clicks delete

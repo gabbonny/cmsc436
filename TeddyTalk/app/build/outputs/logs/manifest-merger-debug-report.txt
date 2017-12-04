@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
 MERGED from [com.android.support:design:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\5800ad7aa934b60872a7b27acf83cd20\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\70c68569cf688a76d5ea2765e99ba465\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1512ff0ddd3fdc27bafe0a80106083b8\AndroidManifest.xml:2:1-11:12
@@ -18,25 +18,25 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Stefani Moo
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\376759729627dc873e6b44aa63c3000a\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\368d65ee0e21e8a680086b4d3cf8f968\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\10b1d2d72c3f880a9725cbc5ca9fffef\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
 	package
 		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:5:5-55:19
+ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:5:5-63:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\5800ad7aa934b60872a7b27acf83cd20\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\5800ad7aa934b60872a7b27acf83cd20\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Stefani Moore\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\70c68569cf688a76d5ea2765e99ba465\AndroidManifest.xml:25:5-29:19
@@ -111,10 +111,14 @@ activity#cmsc436_final_project.teddytalk.StoryPlaybackActivity
 ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:9-53:20
 	android:name
 		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:19-56
-activity#cmsc436_final_project.teddytalk.SaveActivity
-ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:54:9-59
+activity#cmsc436_final_project.teddytalk.ChangeOutfit
+ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:55:9-61:20
 	android:name
-		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:54:19-47
+		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:55:19-47
+activity#cmsc436_final_project.teddytalk.SaveActivity
+ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:62:9-59
+	android:name
+		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:62:19-47
 uses-sdk
 INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml
