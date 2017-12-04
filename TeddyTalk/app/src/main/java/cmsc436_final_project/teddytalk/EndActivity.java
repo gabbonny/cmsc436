@@ -56,6 +56,7 @@ public class EndActivity extends AppCompatActivity {
 
         bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
 
+
         end = (TextView) findViewById(R.id.end_txt);
         replay_txt = (TextView) findViewById(R.id.textView);
         save_txt = (TextView) findViewById(R.id.textView2);
@@ -103,6 +104,20 @@ public class EndActivity extends AppCompatActivity {
         save_button.startAnimation(animSlide);
         rewrite_button.startAnimation(animSlide);
 
+
+        if (bear_outfit == 0) {
+            pop_up_bear.setImageResource(R.drawable.cut_popup_bear);
+        }else if (bear_outfit == 1){
+            pop_up_bear.setImageResource(R.drawable.cut_popup_bear);
+        }else if (bear_outfit == 2){
+            pop_up_bear.setImageResource(R.drawable.cut_popup_bear_glasses);
+        }else if (bear_outfit == 3){
+            pop_up_bear.setImageResource(R.drawable.cut_popup_bear_sailor);
+        }else if (bear_outfit == 4){
+            pop_up_bear.setImageResource(R.drawable.cut_popup_bear_wizard);
+        }
+
+
         pop_up_bear.startAnimation(animSlideUp);
 
         sharedPref = getSharedPreferences("savedStories",MODE_PRIVATE);
@@ -117,6 +132,7 @@ public class EndActivity extends AppCompatActivity {
         //sends the user back to the Speech_To_Text activity to be read back the story
         Intent go = new Intent(EndActivity.this,StoryPlaybackActivity.class);
         go.putExtra(StoryPlaybackActivity.INTENT_DATA, story);
+        go.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
         startActivity(go);
 
     }

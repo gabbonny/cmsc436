@@ -232,10 +232,10 @@ public class StoryPlaybackActivity extends Activity {
 
                 // Play pop sound
                 playPopSoundEffect();
-                if(speechContainer.stop()){
+
                     updatePlayButton(true);
                     updateStopButton(false);
-                }
+
             }
         });
 
@@ -369,9 +369,9 @@ public class StoryPlaybackActivity extends Activity {
 
         if (bear_outfit == 0){
             AnimationDrawable animation = new AnimationDrawable();
-            animation.addFrame(outfit_none[0], 100);
-            animation.addFrame(outfit_none[1], 500);
-            animation.addFrame(outfit_none[2], 300);
+            animation.addFrame(outfit_none[0], 1500);
+            animation.addFrame(outfit_none[1], 1500);
+            animation.addFrame(outfit_none[2], 1500);
             animation.setOneShot(false);
 
             bear.setBackgroundDrawable(animation);
