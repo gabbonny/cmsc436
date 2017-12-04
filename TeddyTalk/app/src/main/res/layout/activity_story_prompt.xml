@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    android:background="@drawable/fantasy_story_bg_2"
+    android:background="@drawable/fantasy_story_bg_3"
     tools:layout_editor_absoluteY="81dp">
 
         <FrameLayout
@@ -42,14 +42,14 @@
                     android:visibility="visible" />
 
                 <ProgressBar
-                    android:id="@+id/progress"
+                    android:id="@+id/progressBar"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="111dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:max="100"
-                    android:progress="5"
+                    android:progress="0"
+                    android:scaleY="5"
                     android:progressTint="@color/colorAccent" />
 
                 <ImageButton

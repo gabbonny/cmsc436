@@ -49,7 +49,6 @@ public class PromptFragment extends Fragment{
     // Variables used to keep track of the content of the fragment
     private Prompt mPrompt;
 
-
     public void setPrompt(Prompt prompt){
         mPrompt = prompt;
     }
@@ -100,7 +99,13 @@ public class PromptFragment extends Fragment{
 
         }
 
+        startAnimation(getView().findViewById(R.id.prompt_wrapper), R.anim.from_top_slide_down);
+        startAnimation(mOptionsContainer, R.anim.slide_in_left);
 
+    }
+
+    public int getCurrPromptID(){
+        return mPrompt != null ? mPrompt.getID() : 0;
     }
 
     @Override
@@ -136,7 +141,8 @@ public class PromptFragment extends Fragment{
 
         //display the prompt content
         setPromptContent();
-
+        startAnimation(getView().findViewById(R.id.prompt_wrapper), R.anim.from_top_slide_down);
+        startAnimation(mOptionsContainer, R.anim.slide_in_left);
     }
 
 
@@ -340,6 +346,14 @@ public class PromptFragment extends Fragment{
 
     public boolean isCompleted(){
         return mPrompt.getUserChoice() != null;
+    }
+
+
+    private void startAnimation(View view, int animationType){
+        Animation animSlide = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                animationType);
+
+        view.startAnimation(animSlide);
     }
 
 

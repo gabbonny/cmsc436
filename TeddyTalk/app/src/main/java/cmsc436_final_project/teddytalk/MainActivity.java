@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import Utils.MyBounceInterpolator;
 
@@ -36,6 +38,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setUpLoadAnimation();
 
         ColorDrawable colorDraw = new ColorDrawable(Color.parseColor("#882472"));//#20a780
 //        getSupportActionBar().setBackgroundDrawable(colorDraw);
@@ -112,5 +116,29 @@ public class MainActivity extends Activity {
         myAnim.setInterpolator(interpolator);
 
         button.startAnimation(myAnim);
+    }
+
+    private void startAnimation(View view, int animationType){
+        Animation animSlide = AnimationUtils.loadAnimation(getApplicationContext(),
+                animationType);
+
+        view.startAnimation(animSlide);
+    }
+
+    private void setUpLoadAnimation(){
+        ImageButton startButton =  findViewById(R.id.start_button);
+        startAnimation(startButton, R.anim.from_bottom_slide_up);
+
+        ImageView bear = findViewById(R.id.bear);
+        startAnimation(bear, R.anim.slide_in_right);
+
+        ImageView start1= findViewById(R.id.stars1);
+        startAnimation(start1, R.anim.from_bottom_slide_up);
+
+        ImageView start2= findViewById(R.id.stars2);
+        startAnimation(start2, R.anim.from_bottom_slide_up);
+
+        ImageView speechBubble = findViewById(R.id.speech_bubble_main);
+        startAnimation(speechBubble, R.anim.from_top_slide_down);
     }
 }

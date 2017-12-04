@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import java.io.IOException;
 
@@ -13,7 +15,10 @@ import Utils.*;
 
 import android.app.FragmentManager;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 /**
@@ -59,7 +64,6 @@ public class StoryPromptActivity extends Activity {
         //create the new story based on user choice
         try {
             story = new Story(fileName, this.getAssets().open(fileName));
-            Log.i(TAG, story.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,6 +71,10 @@ public class StoryPromptActivity extends Activity {
         // Set onClickListener for the Back and Next buttons
         setControlButtonsOnClickListener();
 
+        //set progress bar
+        setProgressBar();
+
+        startAnimation(findViewById(R.id.control_btns_wrapper), R.anim.from_bottom_slide_up);
         //display first fragment
         setupFragment(story.getNextPrompt());
     }
@@ -106,6 +114,7 @@ public class StoryPromptActivity extends Activity {
         ImageButton backButton = findViewById(R.id.back_btn);
         backButton.setOnClickListener(new View.OnClickListener() {
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 // Play pop sound
@@ -127,6 +136,7 @@ public class StoryPromptActivity extends Activity {
 
                     mPromptFragment.setPrompt(prevPrompt);
                     mPromptFragment.setPromptContent();
+                    updateProgressBar();
                 }
 
             }
@@ -136,6 +146,7 @@ public class StoryPromptActivity extends Activity {
         ImageButton nextButton = findViewById(R.id.next_btn);
         nextButton.setOnClickListener(new View.OnClickListener() {
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
 
@@ -176,7 +187,7 @@ public class StoryPromptActivity extends Activity {
                         mPromptFragment.setPrompt(nextPrompt);
                         // load the new prompt
                         mPromptFragment.setPromptContent();
-
+                        updateProgressBar();
                     }
 
                 } else {
@@ -215,4 +226,24 @@ public class StoryPromptActivity extends Activity {
                 mStreamVolume, 1, 0, 1.0f);
     }
 
+    private void startAnimation(View view, int animationType){
+        Animation animSlide = AnimationUtils.loadAnimation(getApplicationContext(),
+                animationType);
+
+        view.startAnimation(animSlide);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void updateProgressBar(){
+        Log.i(TAG, "Update Progress Bar by " + (mPromptFragment.getCurrPromptID() - 1) + "/" + story.getSize() );
+        ProgressBar bar = findViewById(R.id.progressBar);
+        bar.setProgress(mPromptFragment.getCurrPromptID() - 1, true);
+    }
+
+
+    private void setProgressBar(){
+        Log.i(TAG, "Update Progress Bar MAX " + story.getSize());
+        ProgressBar bar = findViewById(R.id.progressBar);
+        bar.setMax(story.getSize());
+    }
 }

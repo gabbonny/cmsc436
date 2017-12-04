@@ -61,6 +61,12 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
         ImageButton next = findViewById(R.id.nextButton);
         next.setOnClickListener(this);
 
+        //animate on load
+        startAnimation(findViewById(R.id.title_background), R.anim.from_top_slide_down);
+        startAnimation(findViewById(R.id.options_wrapper), R.anim.slide_in_left);
+        startAnimation(findViewById(R.id.nextButton), R.anim.from_bottom_slide_up);
+
+
     }
 
     @Override
@@ -203,6 +209,14 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
         myAnim.setInterpolator(interpolator);
 
         button.startAnimation(myAnim);
+    }
+
+
+    private void startAnimation(View view, int animationType){
+        Animation animSlide = AnimationUtils.loadAnimation(getApplicationContext(),
+                animationType);
+
+        view.startAnimation(animSlide);
     }
 
     @Override

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/generic_story_bg_1"
+    android:background="@drawable/select_genre_bg"
     android:id="@+id/select_story">
 
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        android:background="@color/select_genre_title"
+        android:background="@color/white_20opacity"
         android:visibility="visible">
 
         <TextView
@@ -28,8 +28,8 @@
             android:padding="15dp"
             android:text="Pick your Story!!"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="36sp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -83,10 +83,10 @@
             android:layout_marginTop="50dp"
             android:background="@color/fantasy_button"
             android:fontFamily="sans-serif-smallcaps"
+            android:minWidth="150dp"
             android:padding="15dp"
             android:rotation="5"
             android:text="FANTASY"
-            android:minWidth="150dp"
             android:textSize="30sp" />
 
         <Button
@@ -98,10 +98,10 @@
             android:layout_alignStart="@+id/love_button"
             android:background="@color/funny_button"
             android:fontFamily="sans-serif-smallcaps"
+            android:minWidth="150dp"
             android:padding="15dp"
             android:rotation="-5"
             android:text="FUNNY"
-            android:minWidth="150dp"
             android:textSize="30sp" />
 
     </RelativeLayout>

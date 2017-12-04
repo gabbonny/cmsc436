@@ -58,10 +58,17 @@ public class TextToSpeechContainer extends Activity implements OnInitListener{
         return false;
     }
 
-    public static void stop(){
+    public static boolean stop(){
         if(TTS.isSpeaking()){
             TTS.stop();
+            return true;
         }
+
+        return false;
+    }
+
+    public static boolean isSpeaking(){
+        return TTS.isSpeaking();
     }
 
     public static void initialize(Context context) {

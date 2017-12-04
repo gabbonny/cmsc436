@@ -189,6 +189,10 @@ public class Story implements Serializable {
         size++;
     }
 
+    public int getSize(){
+        return size;
+    }
+
     public String toString(){
         StringBuffer story = new StringBuffer();
         Prompt curr = head;
@@ -201,4 +205,6 @@ public class Story implements Serializable {
         return story.toString();
 
     }
+
 }
+

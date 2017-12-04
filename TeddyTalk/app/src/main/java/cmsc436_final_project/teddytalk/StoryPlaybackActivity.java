@@ -7,14 +7,17 @@ import android.media.SoundPool;
 import android.os.Bundle;
 
 
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.Locale;
+import org.w3c.dom.Text;
 
 /**
  * Created by Stefani Moore on 11/12/2017.
@@ -125,19 +128,17 @@ public class StoryPlaybackActivity extends Activity {
                     //display and play prev prompt
                     displayPrompt(prompt);
                     speechContainer.speak(prompt);
+
+                    updatePlayButton(false);
+                    updateStopButton(true);
+
+                    startAnimation(findViewById(R.id.speach_bubble), R.anim.from_top_slide_down);
+                    startAnimation(findViewById(R.id.prompt_text), R.anim.from_top_slide_down);
                 }
 
+                updateBackButtonStatus();
             }
         });
-
-        //toggle back button
-        if(currPrompt <= 0){
-            backButton.setEnabled(false);
-            backButton.setAlpha(0.2F);
-        } else {
-            backButton.setEnabled(true);
-            backButton.setAlpha(1F);
-        }
 
         //Set up Next Button
         ImageButton nextButton = findViewById(R.id.next_btn);
@@ -154,6 +155,8 @@ public class StoryPlaybackActivity extends Activity {
 
                 //check if there are not more prompts to process
                 if(prompt == null) {
+                    //finish speechContainer
+                    speechContainer.stop();
 
                     //no more prompts to process
                     //go to EndActivity
@@ -165,9 +168,20 @@ public class StoryPlaybackActivity extends Activity {
 
                     //display and play next prompt
                     displayPrompt(prompt);
+
+
+                    //set enablePlay
+
+
                     speechContainer.speak(prompt);
+                    updatePlayButton(false);
+                    updateStopButton(true);
+                    startAnimation(findViewById(R.id.speach_bubble), R.anim.from_top_slide_down);
+                    startAnimation(findViewById(R.id.prompt_text), R.anim.from_top_slide_down);
 
                 }
+
+                updateBackButtonStatus();
 
             }
         });
@@ -191,7 +205,8 @@ public class StoryPlaybackActivity extends Activity {
 
                     //read prompt
                     speechContainer.speak(prompt);
-
+                    updatePlayButton(false);
+                    updateStopButton(true);
                 }
             }
         });
@@ -206,9 +221,16 @@ public class StoryPlaybackActivity extends Activity {
 
                 // Play pop sound
                 playPopSoundEffect();
-                speechContainer.stop();
+                if(speechContainer.stop()){
+                    updatePlayButton(true);
+                    updateStopButton(false);
+                }
             }
         });
+
+        updateBackButtonStatus();
+        updatePlayButton(false);
+        updateStopButton(true);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -217,6 +239,7 @@ public class StoryPlaybackActivity extends Activity {
 
             // Set onClickListener for the Back and Next buttons
             setControlButtonsOnClickListener();
+            setUpLoadAnimation();
 
             //display first fragment
             String prompt = getNextPrompt();
@@ -234,6 +257,7 @@ public class StoryPlaybackActivity extends Activity {
     private void displayPrompt(String prompt){
         TextView promptText = findViewById(R.id.prompt_text);
         promptText.setText(prompt);
+
     }
 
     private String getCurrPrompt(){
@@ -258,4 +282,72 @@ public class StoryPlaybackActivity extends Activity {
             return null;
         }
     }
+
+    private void updateBackButtonStatus(){
+
+        ImageButton backButton = findViewById(R.id.back_btn);
+
+        //toggle back button
+        if(currPrompt <= 0){
+            backButton.setEnabled(false);
+            backButton.setAlpha(0.2F);
+        } else {
+            backButton.setEnabled(true);
+            backButton.setAlpha(1F);
+        }
+
+    }
+
+    private void updatePlayButton(boolean enable){
+        ImageButton playButton = findViewById(R.id.play_btn);
+
+        if(enable){
+            playButton.setEnabled(true);
+            playButton.setAlpha(1F);
+
+        } else {
+            playButton.setEnabled(false);
+            playButton.setAlpha(0.2F);
+        }
+
+    }
+
+    private void updateStopButton(boolean enable){
+        ImageButton stopButton = findViewById(R.id.stop_btn);
+
+        if(enable){
+            stopButton.setEnabled(true);
+            stopButton.setAlpha(1F);
+
+        } else {
+            stopButton.setEnabled(false);
+            stopButton.setAlpha(0.2F);
+        }
+    }
+
+    private void startAnimation(View view, int animationType){
+        Animation animSlide = AnimationUtils.loadAnimation(getApplicationContext(),
+                animationType);
+
+        view.startAnimation(animSlide);
+    }
+
+    private void setUpLoadAnimation(){
+        LinearLayout controlButtons =  findViewById(R.id.control_btns_wrapper);
+        startAnimation(controlButtons, R.anim.from_bottom_slide_up);
+
+        ImageView bear = findViewById(R.id.talking_bear);
+        startAnimation(bear, R.anim.slide_in_right);
+
+        ImageView speechBubble = findViewById(R.id.speach_bubble);
+        startAnimation(speechBubble, R.anim.from_top_slide_down);
+
+        TextView promptText = findViewById(R.id.prompt_text);
+        startAnimation(promptText, R.anim.from_top_slide_down);
+    }
+
+    private void updateProgressBar(int val){
+
+    }
+
 }
