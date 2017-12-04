@@ -290,7 +290,7 @@ public class StoryPlaybackActivity extends Activity {
         //toggle back button
         if(currPrompt <= 0){
             backButton.setEnabled(false);
-            backButton.setAlpha(0.2F);
+            backButton.setAlpha(0.4F);
         } else {
             backButton.setEnabled(true);
             backButton.setAlpha(1F);
@@ -307,7 +307,7 @@ public class StoryPlaybackActivity extends Activity {
 
         } else {
             playButton.setEnabled(false);
-            playButton.setAlpha(0.2F);
+            playButton.setAlpha(0.4F);
         }
 
     }
@@ -321,7 +321,7 @@ public class StoryPlaybackActivity extends Activity {
 
         } else {
             stopButton.setEnabled(false);
-            stopButton.setAlpha(0.2F);
+            stopButton.setAlpha(0.4F);
         }
     }
 

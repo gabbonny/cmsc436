@@ -13,7 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/main_title" />
+        android:src="@drawable/main_title_1" />
 
 
     <ImageView

@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:id="@+id/prompt_wrapper"
-        android:background="@color/green_20opacity"
+        android:background="@color/white_20opacity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -88,15 +88,14 @@
                 android:id="@+id/option2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="125dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"
                 android:background="@color/prompt_option2"
                 android:fontFamily="sans-serif-smallcaps"
+                android:minWidth="125dp"
                 android:padding="10dp"
                 android:rotation="15"
                 android:text="Button"
                 android:textSize="30sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/option1"
                 app:layout_constraintBottom_toBottomOf="@+id/option1"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -104,10 +103,10 @@
                 android:id="@+id/option3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="125dp"
                 android:layout_marginTop="60dp"
                 android:background="@color/prompt_option3"
                 android:fontFamily="sans-serif-smallcaps"
+                android:minWidth="125dp"
                 android:padding="10dp"
                 android:rotation="7"
                 android:text="Button"

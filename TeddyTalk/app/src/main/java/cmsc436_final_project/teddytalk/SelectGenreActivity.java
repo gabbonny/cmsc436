@@ -185,7 +185,7 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
                     startActivity(storyPromptIntent);
 
                 } else {
-                    Toast.makeText(this,"Select a genre to continue. Go choose one!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"Select a Story to continue!",Toast.LENGTH_SHORT).show();
                 }
 
             default:
