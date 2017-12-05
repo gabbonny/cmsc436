@@ -34,4 +34,7 @@
 
     <color name="dark_gray">#414040</color>
 
+    <color name="end_activity_options">#3e008e</color>
+    <color name="the_end">#b58200</color>
+
 </resources>

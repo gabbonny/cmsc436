@@ -7,18 +7,26 @@ package cmsc436_final_project.teddytalk;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import Utils.MyBounceInterpolator;
+
 public class EndActivity extends AppCompatActivity {
+
+    private final String TAG = "End Activity";
     //Image view variables for possible animation transition on screen
 
     //transition from the left to right
@@ -49,6 +57,17 @@ public class EndActivity extends AppCompatActivity {
     private int bear_outfit;
     private String[] story;
 
+    //------------------ Sound variables below -------------------------------
+
+    // AudioManager
+    private AudioManager mAudioManager;
+    // SoundPool
+    private SoundPool mSoundPool;
+    // ID for the bubble popping sound
+    private int mSoundID;
+    // Audio volume
+    private float mStreamVolume;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +95,10 @@ public class EndActivity extends AppCompatActivity {
         replay_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //animate button click
+                startOnTapAnimation(view);
+                // Play pop bubble sound
+                mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 replay();
             }
         });
@@ -83,6 +106,10 @@ public class EndActivity extends AppCompatActivity {
         save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //animate button click
+                startOnTapAnimation(view);
+                // Play pop bubble sound
+                mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 save();
             }
         });
@@ -90,6 +117,10 @@ public class EndActivity extends AppCompatActivity {
         rewrite_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //animate button click
+                startOnTapAnimation(view);
+                // Play pop bubble sound
+                mSoundPool.play(mSoundID, mStreamVolume, mStreamVolume, 1, 0, 1.0f);
                 rewrite();
             }
         });
@@ -124,6 +155,20 @@ public class EndActivity extends AppCompatActivity {
         editor = sharedPref.edit();
 
         story = getIntent().getExtras().getStringArray(StoryPlaybackActivity.INTENT_DATA);
+
+        //------------------------ Adding Animation to Stars ----------------------------//
+        ImageView stars1 = findViewById(R.id.stars_1);
+        ImageView stars2 = findViewById(R.id.stars_2);
+
+        // setting animation effects for stars
+        ScaleAnimation anim = new ScaleAnimation(0f, 1f, 0f, 1f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        anim.setFillAfter(true); // Needed to keep the result of the animation
+        anim.setDuration(4000);
+        anim.setRepeatCount(Animation.INFINITE);
+
+        stars1.startAnimation(anim);
+        stars2.startAnimation(anim);
 
     }
 
@@ -197,5 +242,49 @@ public class EndActivity extends AppCompatActivity {
         Intent go = new Intent(EndActivity.this,SelectGenreActivity.class);
         go.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
         startActivity(go);
+    }
+
+    //----------------------Methods Below Handle Button Animation ---------------------------
+
+    /**
+     * This method start the bouncing animation
+     * @param button The button to apply the animation
+     */
+    private void startOnTapAnimation(View button) {
+
+        Log.i(TAG, "Tapped Option Button " + button.getId());
+
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator);
+
+        button.startAnimation(myAnim);
+    }
+
+    //-------------------- Methods below handle sound effects --------------------------
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+
+        mStreamVolume = (float) mAudioManager
+                .getStreamVolume(AudioManager.STREAM_MUSIC)
+                / mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+
+        mSoundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+
+        mSoundID = mSoundPool.load(this, R.raw.bubble_pop, 1);
+
+    }
+
+    @Override
+    protected void onPause() {
+        mSoundPool.unload(mSoundID);
+        mSoundPool.release();
+        mSoundPool = null;
+        super.onPause();
     }
 }

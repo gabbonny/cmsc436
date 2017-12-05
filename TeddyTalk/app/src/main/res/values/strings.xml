@@ -5,9 +5,9 @@
     <string name="next_btn">Continue</string>
     <string name="back_btn_descrip">Back Button</string>
     <string name="next_btn_descrip">Next Button</string>
-    <string name="replay">Replay</string>
-    <string name="save">Save?</string>
-    <string name="restart">Restart</string>
+    <string name="replay">REPLAY</string>
+    <string name="save">SAVE</string>
+    <string name="restart">RESTART</string>
     <string name="ending">The End</string>
     <string name="hint">Write in here</string>
 </resources>

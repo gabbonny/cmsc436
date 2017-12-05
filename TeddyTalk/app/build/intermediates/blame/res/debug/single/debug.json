@@ -124,20 +124,20 @@
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\70c68569cf688a76d5ea2765e99ba465\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\368d65ee0e21e8a680086b4d3cf8f968\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_generic_story_bg_5.jpg.flat",
-        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\generic_story_bg_5.jpg"
+        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\5800ad7aa934b60872a7b27acf83cd20\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_generic_story_bg_5.jpg.flat",
+        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\generic_story_bg_5.jpg"
     },
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -380,10 +380,6 @@
         "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\play_button.png"
     },
     {
-        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg.png.flat",
-        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\bg.png"
-    },
-    {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\70c68569cf688a76d5ea2765e99ba465\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -610,6 +606,10 @@
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_layout.xml.flat",
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\70c68569cf688a76d5ea2765e99ba465\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher.png.flat",
+        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",
@@ -1526,6 +1526,10 @@
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Stefani Moore\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\70c68569cf688a76d5ea2765e99ba465\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\drawable_outfit_banner.png.flat",
+        "source": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\src\\main\\res\\drawable\\outfit_banner.png"
     },
     {
         "merged": "C:\\Users\\Stefani Moore\\Documents\\GitHub\\cmsc436_teddy_talk\\TeddyTalk\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_design_tint_password_toggle.xml.flat",

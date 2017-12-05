@@ -8,24 +8,23 @@
     tools:context="cmsc436_final_project.teddytalk.SaveActivity">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="188dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fantasy_button"
+        android:layout_alignParentStart="true"
+        android:padding="15dp"
         android:text="Saved Stories"
-        app:layout_constraintEnd_toStartOf="@+id/toTitle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAlignment="center"
+        android:textColor="@color/pick_story_color"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/toTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="456dp"
         android:background="@color/select_genre_title"
         android:text="Go back to TItle"
         app:layout_constraintEnd_toEndOf="parent"

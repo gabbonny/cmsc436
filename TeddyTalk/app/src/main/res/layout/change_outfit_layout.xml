@@ -1,92 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEE8C8">
+    android:background="@drawable/generic_story_bg_9"
+    android:theme="@style/AppTheme.NoActionBar">
 
+        <ImageView
+            android:id="@+id/outfit_bear"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/banner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            app:srcCompat="@drawable/outfit_bear" />
 
-    <ImageView
-        android:id="@+id/outfit_bear"
-        android:layout_width="212dp"
-        android:layout_height="302dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@drawable/outfit_bear" />
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/outfit_banner" />
+
 
     <LinearLayout
-        android:id="@+id/outfit_bear_layout"
-        android:layout_width="425dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="148dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/control_btns_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/outfit_bear"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:padding="10dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="300dp">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/none"
-            android:layout_width="80dp"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/none_icon" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back_btn_descrip"
+            android:scaleType="fitStart"
+            android:src="@drawable/none_icon"
+            android:visibility="visible" />
 
-        <ImageView
+
+        <ImageButton
             android:id="@+id/glasses"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/glasses_icon" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/glasses_icon"
+            android:visibility="visible" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/umd"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/umd_icon" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/umd_icon"
+            android:visibility="visible" />
 
-        <ImageView
-            android:id="@+id/sailor"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/sailor_icon" />
-
-        <ImageView
+        <ImageButton
             android:id="@+id/wizard"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/wizard_icon" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitEnd"
+            android:src="@drawable/wizard_icon"
+            android:visibility="visible" />
 
+        <ImageButton
+            android:id="@+id/sailor"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next_btn_descrip"
+            android:scaleType="fitEnd"
+            android:src="@drawable/sailor_icon"
+            android:visibility="visible" />
     </LinearLayout>
 
     <Button
         android:id="@+id/confirm_outfit"
         android:layout_width="163dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/control_btns_wrapper"
+        android:layout_centerHorizontal="true"
         android:background="@color/prompt_option1"
         android:text="CHANGE"
         android:textColor="@color/colorAccent"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+        android:textSize="20dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

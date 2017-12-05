@@ -230,8 +230,9 @@ public class StoryPlaybackActivity extends Activity {
                 // Play pop sound
                 playPopSoundEffect();
 
-                    updatePlayButton(true);
-                    updateStopButton(false);
+                speechContainer.stop();
+                updatePlayButton(true);
+                updateStopButton(false);
 
             }
         });

@@ -65,6 +65,9 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
         ImageButton next = findViewById(R.id.nextButton);
         next.setOnClickListener(this);
 
+        Button viewSavedFiles = findViewById(R.id.viewSaved);
+        viewSavedFiles.setOnClickListener(this);
+
         //animate on load
         startAnimation(findViewById(R.id.title_background), R.anim.from_top_slide_down);
         startAnimation(findViewById(R.id.options_wrapper), R.anim.slide_in_left);
@@ -192,6 +195,12 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
                 } else {
                     Toast.makeText(this,"Select a Story to continue!",Toast.LENGTH_SHORT).show();
                 }
+                break;
+
+
+            case R.id.viewSaved:
+                Intent viewSavedIntent  = new Intent(this, SaveActivity.class);
+                startActivity(viewSavedIntent);
 
             default:
                 break;
