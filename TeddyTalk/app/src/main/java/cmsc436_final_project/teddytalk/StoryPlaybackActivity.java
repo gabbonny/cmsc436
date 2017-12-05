@@ -378,9 +378,9 @@ public class StoryPlaybackActivity extends Activity {
             animation.start();
         }else if (bear_outfit == 1){
             AnimationDrawable animation = new AnimationDrawable();
-            animation.addFrame(outfit_umd[0], 100);
-            animation.addFrame(outfit_umd[1], 500);
-            animation.addFrame(outfit_umd[2], 300);
+            animation.addFrame(outfit_umd[0], 1500);
+            animation.addFrame(outfit_umd[1], 1500);
+            animation.addFrame(outfit_umd[2], 1500);
             animation.setOneShot(false);
 
             bear.setBackgroundDrawable(animation);
@@ -389,9 +389,9 @@ public class StoryPlaybackActivity extends Activity {
             animation.start();
         }else if (bear_outfit == 2){
             AnimationDrawable animation = new AnimationDrawable();
-            animation.addFrame(outfit_glasses[0], 100);
-            animation.addFrame(outfit_glasses[1], 500);
-            animation.addFrame(outfit_glasses[2], 300);
+            animation.addFrame(outfit_glasses[0], 1500);
+            animation.addFrame(outfit_glasses[1], 1500);
+            animation.addFrame(outfit_glasses[2], 1500);
             animation.setOneShot(false);
 
             bear.setBackgroundDrawable(animation);
@@ -400,9 +400,9 @@ public class StoryPlaybackActivity extends Activity {
             animation.start();
         }else if (bear_outfit == 3){
             AnimationDrawable animation = new AnimationDrawable();
-            animation.addFrame(outfit_sailor[0], 100);
-            animation.addFrame(outfit_sailor[1], 500);
-            animation.addFrame(outfit_sailor[2], 300);
+            animation.addFrame(outfit_sailor[0], 1500);
+            animation.addFrame(outfit_sailor[1], 1500);
+            animation.addFrame(outfit_sailor[2], 1500);
             animation.setOneShot(false);
 
             bear.setBackgroundDrawable(animation);
@@ -411,9 +411,9 @@ public class StoryPlaybackActivity extends Activity {
             animation.start();
         }else if (bear_outfit == 4){
             AnimationDrawable animation = new AnimationDrawable();
-            animation.addFrame(outfit_wizard[0], 100);
-            animation.addFrame(outfit_wizard[1], 500);
-            animation.addFrame(outfit_wizard[2], 300);
+            animation.addFrame(outfit_wizard[0], 1500);
+            animation.addFrame(outfit_wizard[1], 1500);
+            animation.addFrame(outfit_wizard[2], 1500);
             animation.setOneShot(false);
 
             bear.setBackgroundDrawable(animation);
