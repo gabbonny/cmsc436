@@ -1,10 +1,10 @@
 Once upon a time, there was a hero named:
 *Enter name., Arthur, Lorie, Everette, Zelda
 
-This hero lived in a village called
+The hero lived in a village called
 *Enter name., Butterpond, Imgur, Gothan, Wintervale
 
-This hero was trained as a
+He was trained as a
 with a powerful sword. The most powerful in the land.
 *Enter hero class., knight, warrior, hunter, shinobi
 
@@ -15,6 +15,6 @@ The enemy wants to destroy everything!
 All hope seemed lost until the hero came to save the day! The hero needed to activate the secret power of the sword by yelling
 *Enter phrase., SANDWICH, AWAKEN, BOW CHICA, BOW OW
 
-The hero slayed and crowd went wild. The enemy quickly retread, and yelled as he ran away:
-*Enter phrase., OUCH, AA...AAH, So Rude!, Whatever
+The hero slayed and crowd went wild. The enemy quickly retreated, and yelled as he ran away:
+*Enter phrase., OUCH!, AA...AAH!, So Rude!, WHATEVER!
 

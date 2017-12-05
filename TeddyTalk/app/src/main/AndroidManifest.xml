@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ChangeOutfit">
+        <activity android:name=".ChangeOutfitActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

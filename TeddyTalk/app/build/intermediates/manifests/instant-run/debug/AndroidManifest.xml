@@ -59,7 +59,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cmsc436_final_project.teddytalk.ChangeOutfit" >
+        <activity android:name="cmsc436_final_project.teddytalk.ChangeOutfitActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

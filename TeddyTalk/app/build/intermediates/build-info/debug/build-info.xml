@@ -5,24 +5,28 @@
     build-mode="COLD"
     density="560dpi"
     format="10"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.0.1"
-    timestamp="1512434887866"
+    timestamp="1512437396652"
     token="8971209061590731295"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="2779" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="258" />
     <task
         name="verifier"
-        duration="0" />
+        duration="56" />
 
+    <artifact
+        location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
     <artifact
         location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
@@ -71,15 +75,6 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1512431630941"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
         timestamp="1512434537271"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
@@ -88,8 +83,12 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512434887866"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1512437396652"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />

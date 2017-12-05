@@ -57,7 +57,7 @@ public class StoryPromptActivity extends Activity {
 
         setContentView(R.layout.activity_story_prompt);
 
-        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
+        bear_outfit = getIntent().getIntExtra(ChangeOutfitActivity.BEAR_OUTFIT, 0);
 
         // Get reference to fragment manager
         mFragmentManager = getFragmentManager();
@@ -179,7 +179,7 @@ public class StoryPromptActivity extends Activity {
                         if(finishedStory != null){
                             Intent storyPlaybackActivity = new Intent(getApplicationContext(), StoryPlaybackActivity.class);
                             storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
-                            storyPlaybackActivity.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
+                            storyPlaybackActivity.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
                             startActivity(storyPlaybackActivity);
                         }
 

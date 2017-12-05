@@ -14,8 +14,6 @@ import android.widget.ImageView;
 import android.content.Intent;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import Utils.MyBounceInterpolator;
 
@@ -76,7 +74,7 @@ public class MainActivity extends Activity {
                 Intent selectGenreIntent = new Intent(MainActivity.this, SelectGenreActivity.class);
                 mSoundPool.play(mSoundID, mStreamVolume,
                         mStreamVolume, 1, 0, 1.0f);
-                selectGenreIntent.putExtra(ChangeOutfit.BEAR_OUTFIT, outfit);
+                selectGenreIntent.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, outfit);
                 startActivity(selectGenreIntent);
             }
         });
@@ -158,7 +156,7 @@ public class MainActivity extends Activity {
     }
 
     private void changeOutfit() {
-        Intent go = new Intent(MainActivity.this, ChangeOutfit.class);
+        Intent go = new Intent(MainActivity.this, ChangeOutfitActivity.class);
         startActivityForResult(go, CHANGED_OUTFIT);
     }
 
@@ -170,7 +168,7 @@ public class MainActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 //give the outfit the values from the intent data
                 Bundle b = data.getExtras();
-                outfit = (int) b.get(ChangeOutfit.BEAR_OUTFIT);
+                outfit = (int) b.get(ChangeOutfitActivity.BEAR_OUTFIT);
                 if (outfit == 0) {
                     bear.setImageResource(R.drawable.main_bear);
                 }else if (outfit == 1){

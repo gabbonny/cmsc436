@@ -2,7 +2,6 @@ package cmsc436_final_project.teddytalk;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -43,7 +42,7 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_genre);
 
-        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
+        bear_outfit = getIntent().getIntExtra(ChangeOutfitActivity.BEAR_OUTFIT, 0);
 
         buttonList = new HashMap();
 
@@ -187,7 +186,7 @@ public class SelectGenreActivity extends Activity implements View.OnClickListene
 
                     Intent storyPromptIntent = new Intent(this, StoryPromptActivity.class);
                     storyPromptIntent.putExtra(StoryPromptActivity.INTENT_DATA, chosen);
-                    storyPromptIntent.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
+                    storyPromptIntent.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
                     startActivity(storyPromptIntent);
 
                 } else {

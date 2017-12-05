@@ -16,10 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by Stefani Moore on 11/12/2017.
@@ -64,7 +61,7 @@ public class StoryPlaybackActivity extends Activity {
         setContentView(R.layout.activity_story_playback);
 
         //to keep passing on the outfit across the app
-        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
+        bear_outfit = getIntent().getIntExtra(ChangeOutfitActivity.BEAR_OUTFIT, 0);
 
 
         try {
@@ -172,7 +169,7 @@ public class StoryPlaybackActivity extends Activity {
                     //go to EndActivity
                     Intent end = new Intent(getApplicationContext(),EndActivity.class);
                     end.putExtra(INTENT_DATA,getIntent().getExtras().getStringArray(INTENT_DATA));
-                    end.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
+                    end.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
                     startActivity(end);
 
                 } else {

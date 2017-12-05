@@ -111,10 +111,10 @@ activity#cmsc436_final_project.teddytalk.StoryPlaybackActivity
 ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:9-53:20
 	android:name
 		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:47:19-56
-activity#cmsc436_final_project.teddytalk.ChangeOutfit
+activity#cmsc436_final_project.teddytalk.ChangeOutfitActivity
 ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:55:9-61:20
 	android:name
-		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:55:19-47
+		ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:55:19-55
 activity#cmsc436_final_project.teddytalk.SaveActivity
 ADDED from C:\Users\Stefani Moore\Documents\GitHub\cmsc436_teddy_talk\TeddyTalk\app\src\main\AndroidManifest.xml:62:9-59
 	android:name

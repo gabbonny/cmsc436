@@ -54,7 +54,7 @@ public class EndActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_main);
 
-        bear_outfit = getIntent().getIntExtra(ChangeOutfit.BEAR_OUTFIT, 0);
+        bear_outfit = getIntent().getIntExtra(ChangeOutfitActivity.BEAR_OUTFIT, 0);
 
 
         end = (TextView) findViewById(R.id.end_txt);
@@ -132,7 +132,7 @@ public class EndActivity extends AppCompatActivity {
         //sends the user back to the Speech_To_Text activity to be read back the story
         Intent go = new Intent(EndActivity.this,StoryPlaybackActivity.class);
         go.putExtra(StoryPlaybackActivity.INTENT_DATA, story);
-        go.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
+        go.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
         startActivity(go);
 
     }
@@ -195,7 +195,7 @@ public class EndActivity extends AppCompatActivity {
         //CALLED IN XML
         //Goes back to rewrite story, pick a genre and do prompt activities again
         Intent go = new Intent(EndActivity.this,SelectGenreActivity.class);
-        go.putExtra(ChangeOutfit.BEAR_OUTFIT, bear_outfit);
+        go.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
         startActivity(go);
     }
 }
