@@ -3893,7 +3893,7 @@ public final class R {
     public static final int notification_template_part_chronometer=0x7f0a003d;
     public static final int notification_template_part_time=0x7f0a003e;
     public static final int prompt_fragment=0x7f0a003f;
-    public static final int save_prompt=0x7f0a0040;
+    public static final int save_prompt_layout=0x7f0a0040;
     public static final int select_dialog_item_material=0x7f0a0041;
     public static final int select_dialog_multichoice_material=0x7f0a0042;
     public static final int select_dialog_singlechoice_material=0x7f0a0043;

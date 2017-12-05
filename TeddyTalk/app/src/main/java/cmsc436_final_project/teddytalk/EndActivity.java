@@ -4,13 +4,13 @@ package cmsc436_final_project.teddytalk;
  * Created by Stefani Moore on 11/25/2017.
  */
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 import Utils.MyBounceInterpolator;
 
-public class EndActivity extends AppCompatActivity {
+public class EndActivity extends Activity {
 
     private final String TAG = "End Activity";
     //Image view variables for possible animation transition on screen
@@ -187,7 +187,7 @@ public class EndActivity extends AppCompatActivity {
 
         // get prompts.xml view
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.save_prompt, null);
+        View promptsView = li.inflate(R.layout.save_prompt_layout, null);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this);

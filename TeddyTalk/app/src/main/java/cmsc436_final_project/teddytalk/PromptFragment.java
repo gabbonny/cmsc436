@@ -105,7 +105,7 @@ public class PromptFragment extends Fragment{
     }
 
     public int getCurrPromptID(){
-        return mPrompt != null ? mPrompt.getID() : 0;
+        return mPrompt != null ? mPrompt.getID() : 1;
     }
 
     @Override

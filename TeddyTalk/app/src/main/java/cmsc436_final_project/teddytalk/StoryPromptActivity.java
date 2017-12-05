@@ -140,7 +140,7 @@ public class StoryPromptActivity extends Activity {
 
                     mPromptFragment.setPrompt(prevPrompt);
                     mPromptFragment.setPromptContent();
-                    updateProgressBar();
+                    updateProgressBar(mPromptFragment.getCurrPromptID() - 1);
                 }
 
             }
@@ -177,6 +177,9 @@ public class StoryPromptActivity extends Activity {
 
                         //Check if story is actually completed
                         if(finishedStory != null){
+                            //reset progress bar
+                            updateProgressBar(0);
+
                             Intent storyPlaybackActivity = new Intent(getApplicationContext(), StoryPlaybackActivity.class);
                             storyPlaybackActivity.putExtra(INTENT_DATA, finishedStory);
                             storyPlaybackActivity.putExtra(ChangeOutfitActivity.BEAR_OUTFIT, bear_outfit);
@@ -192,7 +195,7 @@ public class StoryPromptActivity extends Activity {
                         mPromptFragment.setPrompt(nextPrompt);
                         // load the new prompt
                         mPromptFragment.setPromptContent();
-                        updateProgressBar();
+                        updateProgressBar(mPromptFragment.getCurrPromptID() - 1);
                     }
 
                 } else {
@@ -239,10 +242,10 @@ public class StoryPromptActivity extends Activity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void updateProgressBar(){
-        Log.i(TAG, "Update Progress Bar by " + (mPromptFragment.getCurrPromptID() - 1) + "/" + story.getSize() );
+    private void updateProgressBar(int val){
+        Log.i(TAG, "Update Progress Bar by " + val + "/" + story.getSize() );
         ProgressBar bar = findViewById(R.id.progressBar);
-        bar.setProgress(mPromptFragment.getCurrPromptID() - 1, true);
+        bar.setProgress(val, true);
     }
 
 

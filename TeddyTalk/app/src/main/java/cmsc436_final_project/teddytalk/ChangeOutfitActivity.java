@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 
-public class ChangeOutfitActivity extends AppCompatActivity {
+public class ChangeOutfitActivity extends Activity {
     public static final String BEAR_OUTFIT = "bear_outfit";
     private ImageView bear;
     private ImageView none;

@@ -14,7 +14,7 @@
             android:layout_below="@+id/banner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp"
-            app:srcCompat="@drawable/outfit_bear" />
+            android:src="@drawable/outfit_bear" />
 
         <ImageView
             android:id="@+id/banner"

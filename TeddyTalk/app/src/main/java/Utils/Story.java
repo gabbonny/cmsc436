@@ -107,6 +107,7 @@ public class Story implements Serializable {
             i++;
         }
 
+
         return finishedPrompts;
     }
 
