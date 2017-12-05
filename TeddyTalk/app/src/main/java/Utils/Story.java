@@ -128,7 +128,7 @@ public class Story implements Serializable {
 
         //keep reading till it sees the empty line which marks the end of the file
         while((mLine = promptReader.readLine()) != null) {
-
+            Log.i(TAG, "reading + " + mLine);
             //finished reading the prompt
             if(mLine.equals("")){
 

@@ -1,18 +1,20 @@
-Once upon a time, there were four friends walking in the woods in search of a treasure. The treasure was a golden
-*Enter the treasure., gold, cool toy, gem, wand
+Once upon a time, there was a hero named:
+*Enter name., Arthur, Lorie, Everette, Zelda
 
-There was a
-Smart and strategic. The leader  of group and in charge of the treasure map!
-*Enter an animal., turtle, crow, rabbit, elephant
+This hero lived in a village called
+*Enter name., Butterpond, Imgur, Gothan, Wintervale
 
-There was a
-Brave and bold, and ready to strike at anytime!
-*Enter an animal., tiger, lion, eagle, gorila
+This hero was trained as a
+with a powerful sword. The most powerful in the land.
+*Enter hero class., knight, warrior, hunter, shinobi
 
-There was a
-Funny and energetic, and likes to play pranks and collect things.
-*Enter an animal., rabbit, guinea pig, chipmunks, monkey
+Suddenly, the village was under attack by a large
+The enemy wants to destroy everything!
+*Enter villain., ogre, troll, dragon, Cthulhu
 
-Lastly, there was a
-Timid and king, who was ready to protect his friends with his magic spells.
-*Enter an animal., bunny, puppy, pony, squirrel
+All hope seemed lost until the hero came to save the day! The hero needed to activate the secret power of the sword by yelling
+*Enter phrase., SANDWICH, AWAKEN, BOW CHICA, BOW OW
+
+The hero slayed and crowd went wild. The enemy quickly retread, and yelled as he ran away:
+*Enter phrase., OUCH, AA...AAH, So Rude!, Whatever
+

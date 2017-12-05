@@ -7,12 +7,25 @@ Smart and strategic. The leader  of group and in charge of the treasure map!
 
 There was a
 Brave and bold, and ready to strike at anytime!
-*Enter an animal., tiger, lion, eagle, gorila
+*Enter an animal., tiger, lion, eagle, gorilla
 
 There was a
 Funny and energetic, and likes to play pranks and collect things.
 *Enter an animal., rabbit, guinea pig, chipmunks, monkey
 
 Lastly, there was a
-Timid and king, who was ready to protect his friends with his magic spells.
+Shy and nice, on guard to protect the group.
 *Enter an animal., bunny, puppy, pony, squirrel
+
+The leader lead the group to the hidden dungeon where the treasure was buried.
+The dungeon was
+Very hard to go through.
+*Enter input., scary, cold, icky, nice
+
+At the end, they found the treasure guarded by a fiersome dragon called
+*Enter name., Gork, Smog, Rocko, angry lizard
+
+The group worked together and defeated the dragon! The treasure was revealed!
+The group was
+*Enter input., meh, happy, excited, victorious
+
